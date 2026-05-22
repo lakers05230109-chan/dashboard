@@ -1,6 +1,6 @@
 {
   "updated": "2026-05-22T08:00:00+08:00",
-  "source": "manual_curated + rss",
+  "source": "manual_curated",
   "metrics": {
     "m7_mcap": {
       "value": "17.8",
@@ -35,7 +35,7 @@
         "MoE",
         "代码能力"
       ],
-      "link": "https://www.deepseek.com/"
+      "link": "https://news.google.com/search?q=DeepSeek+V5+685B+MoE&hl=zh-CN"
     },
     {
       "title": "Opus 4.7：Agent 自主执行 4h+ 复杂任务，工具调用成功率 94%，长程规划能力标志性跃升",
@@ -48,7 +48,7 @@
         "长任务",
         "工具使用"
       ],
-      "link": "https://www.anthropic.com/"
+      "link": "https://news.google.com/search?q=Claude+Opus+4.7+Agent&hl=zh-CN"
     },
     {
       "title": "o4-mini 发布：推理成本 $0.15/1M tokens，多模态推理能力接近 GPT-5 mini 水平",
@@ -61,7 +61,7 @@
         "降本",
         "多模态"
       ],
-      "link": "https://openai.com/"
+      "link": "https://news.google.com/search?q=OpenAI+o4-mini+推理&hl=zh-CN"
     },
     {
       "title": "Rubin Ultra 量产提前至 Q3 2026：单卡 600W / 800 TFLOPS FP8，B300 同步扩产中",
@@ -74,7 +74,7 @@
         "算力",
         "Rubin"
       ],
-      "link": "https://www.nvidia.com/"
+      "link": "https://news.google.com/search?q=NVIDIA+Rubin+Ultra+量产&hl=zh-CN"
     },
     {
       "title": "《AI 赋能新型工业化三年行动计划（2026-2028）》：2028 年工业大模型渗透率目标 60%",
@@ -87,7 +87,7 @@
         "工业AI",
         "国产替代"
       ],
-      "link": "https://www.miit.gov.cn/"
+      "link": "https://news.google.com/search?q=AI+新型工业化+三年行动&hl=zh-CN"
     },
     {
       "title": "Optimus 进入上海工厂产线实测：500+ 独立操作技能，2027 年目标外销",
@@ -100,7 +100,7 @@
         "人形机器人",
         "量产"
       ],
-      "link": "https://www.tesla.com/"
+      "link": "https://news.google.com/search?q=Tesla+Optimus+上海工厂&hl=zh-CN"
     },
     {
       "title": "豆包大模型日调用突破 8 万亿 tokens，API 收入连续 8 个月增长 25%+",
@@ -113,7 +113,7 @@
         "字节",
         "生态"
       ],
-      "link": "https://www.bytedance.com/"
+      "link": "https://news.google.com/search?q=豆包+大模型+万亿+tokens&hl=zh-CN"
     }
   ]
 }
