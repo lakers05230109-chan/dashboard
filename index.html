@@ -231,7 +231,7 @@ function renderNews(containerId, articles) {
   const el = document.getElementById(containerId);
   if (!el || !articles) return;
   el.innerHTML = articles.map(a => `
-    <div class="ni">
+    <div class="ni" onclick="window.open('${a.link || '#'}','_blank')" style="${a.link ? '' : ''}">
       <div class="ni-top"><span class="ni-src">${a.source}</span><span class="ni-time">${a.date}</span>${a.badge ? `<span class="ni-chi ${a.badge_type||'chip-4'}">${a.badge}</span>` : ''}</div>
       <div class="ni-text">${a.title}</div>
       ${a.tags ? `<div class="ni-tags">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : ''}
@@ -328,41 +328,60 @@ STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">
 STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">${s.sym}</span><span class="tk-px">--</span><span class="tk-ch">--</span></span>`);
 
 let rc = 0;
+
+// Eastmoney API — works in China, CORS-friendly
+const EM_MAP = {
+  'aapl':'105.AAPL', 'msft':'105.MSFT', 'nvda':'105.NVDA', 'googl':'105.GOOGL',
+  'meta':'105.META', 'tsla':'105.TSLA', '9988':'116.09988', '0700':'116.00700',
+};
+
 async function fetchFinance() {
   try {
-    const syms = STOCKS.map(s=>s.sym).join('%2C') + '%2CGC%3DF%2CUSDCNH%3DX';
-    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${syms}?range=1d&interval=5m`);
-    const d = await r.json(); const results = d?.chart?.result; if(!results) return;
+    const codes = Object.values(EM_MAP).join(',');
+    const url = `https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=${codes}&fields=f2,f3,f4,f12,f14`;
+    const r = await fetch(url);
+    const d = await r.json();
+    const items = d?.data?.diff || [];
+    const emData = {};
+    items.forEach(it => { emData[it.f12] = it; });
 
-    STOCKS.forEach((s,i) => {
-      const m = results[i]?.meta; if(!m) return;
-      const px = m.regularMarketPrice, prev = m.previousClose||m.chartPreviousClose;
-      const ch = px-prev, pct = prev?(ch/prev*100):0, up = ch>=0, c = s.c||'$';
+    STOCKS.forEach(s => {
+      const it = emData[s.sym.replace('.HK','')];
+      if (!it) return;
+      const px = it.f2, pct = it.f3, ch = it.f4, up = ch >= 0, c = s.c||'$';
       stockData[s.id] = { px, ch, pct, up };
-      const tp=document.getElementById(`tkp-${s.id}`), tc=document.getElementById(`tkc-${s.id}`);
-      if(tp)tp.textContent=c+px.toFixed(2);
-      if(tc){tc.className='tk-ch '+(up?'up':'down');tc.textContent=`${up?'+':''}${pct.toFixed(2)}%`;}
+      const tp = document.getElementById(`tkp-${s.id}`), tc = document.getElementById(`tkc-${s.id}`);
+      if (tp) tp.textContent = c + (px ? px.toFixed(2) : '--');
+      if (tc) { tc.className = 'tk-ch '+(up?'up':'down'); tc.textContent = `${up?'+':''}${(pct||0).toFixed(2)}%`; }
     });
 
-    if (results[8]?.meta) {
-      const gm=results[8].meta, gp=gm.regularMarketPrice, gpr=gm.previousClose||gm.chartPreviousClose;
-      const gc=gp-gpr, gpct=gpr?(gc/gpr*100):0, gu=gc>=0;
-      document.getElementById('gold-price').textContent = `$${gp.toFixed(2)}`;
-      const ge=document.getElementById('gold-change'); ge.className='gf-change '+(gu?'up':'down');
-      ge.innerHTML = `${gu?'+':''}${gpct.toFixed(2)}% · ${gu?'▲':'▼'} $${Math.abs(gc).toFixed(2)}`;
-    }
+    // Gold: Shanghai Gold Exchange AU9999
+    try {
+      const gr = await fetch('https://push2.eastmoney.com/api/qt/stock/get?secid=8.AU9999&fields=f43,f44,f169,f170');
+      const gd = await gr.json();
+      if (gd?.data) {
+        const gp = gd.data.f43, gch = gd.data.f169, gpct = gd.data.f170, gu = (gch||0) >= 0;
+        document.getElementById('gold-price').textContent = '¥' + (gp ? gp.toFixed(2) : '--');
+        const ge = document.getElementById('gold-change'); ge.className = 'gf-change '+(gu?'up':'down');
+        ge.innerHTML = `${gu?'+':''}${(gpct||0).toFixed(2)}% · ${gu?'▲':'▼'} ¥${Math.abs(gch||0).toFixed(2)}`;
+      }
+    } catch(e) { console.log('gold:', e.message); }
 
-    if (results[9]?.meta) {
-      const fm=results[9].meta, fp=fm.regularMarketPrice, fpr=fm.previousClose||fm.chartPreviousClose;
-      const fc=fp-fpr, fpct=fpr?(fc/fpr*100):0, fu=fc>=0;
-      document.getElementById('fx-price').textContent = fp.toFixed(4);
-      const fe=document.getElementById('fx-change'); fe.className='gf-change '+(fu?'up':'down');
-      fe.innerHTML = `${fu?'+':''}${fpct.toFixed(3)}% · ${fu?'▲':'▼'} ${Math.abs(fc).toFixed(4)}`;
-    }
+    // USDCNH: forex
+    try {
+      const fr = await fetch('https://push2.eastmoney.com/api/qt/stock/get?secid=133.USDCNH&fields=f43,f169,f170');
+      const fd = await fr.json();
+      if (fd?.data) {
+        const fp = fd.data.f43, fch = fd.data.f169, fpct = fd.data.f170, fu = (fch||0) >= 0;
+        document.getElementById('fx-price').textContent = fp ? fp.toFixed(4) : '--';
+        const fe = document.getElementById('fx-change'); fe.className = 'gf-change '+(fu?'up':'down');
+        fe.innerHTML = `${fu?'+':''}${(fpct||0).toFixed(3)}% · ${fu?'▲':'▼'} ${Math.abs(fch||0).toFixed(4)}`;
+      }
+    } catch(e) { console.log('fx:', e.message); }
 
     renderCurrentStock();
     rc++; document.getElementById('rc').textContent = rc;
-  } catch(e) { console.log(e.message); }
+  } catch(e) { console.log('finance:', e.message); }
 }
 fetchFinance(); setInterval(fetchFinance, 30000);
 </script>
