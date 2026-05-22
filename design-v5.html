@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERMINAL · 全球情报终端</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0a14;
+    --surface-1: #12101e;
+    --surface-2: #181628;
+    --surface-3: #1e1b30;
+    --border: rgba(255,255,255,0.05);
+    --border-glow: rgba(255,255,255,0.1);
+
+    --candy-pink: #ff6699;
+    --candy-pink-glow: rgba(255,102,153,0.2);
+    --candy-purple: #b388ff;
+    --candy-purple-glow: rgba(179,136,255,0.2);
+    --candy-mint: #50e8a0;
+    --candy-mint-glow: rgba(80,232,160,0.2);
+    --candy-blue: #5ec5f9;
+    --candy-blue-glow: rgba(94,197,249,0.2);
+    --candy-peach: #ff8a65;
+    --candy-peach-glow: rgba(255,138,101,0.2);
+    --candy-yellow: #ffd54f;
+    --candy-yellow-glow: rgba(255,213,79,0.2);
+    --candy-rose: #ff80ab;
+    --candy-rose-glow: rgba(255,128,171,0.2);
+    --candy-gold: #ffc107;
+
+    --text: #e8e6f0;
+    --text-dim: #b8b4d0;
+    --text-muted: #787390;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== AMBIENT BLOBS ===== */
+  .blobs { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+  .blob {
+    position:absolute; border-radius:50%; filter:blur(160px); opacity:0.06;
+    animation: blobFloat 20s infinite ease-in-out;
+  }
+  .blob-1 { width:500px; height:500px; background:var(--candy-pink); top:-10%; left:-8%; animation-delay:0s; }
+  .blob-2 { width:450px; height:450px; background:var(--candy-purple); bottom:-15%; right:-5%; animation-delay:-7s; }
+  .blob-3 { width:400px; height:400px; background:var(--candy-mint); top:40%; left:50%; animation-delay:-14s; }
+  .blob-4 { width:350px; height:350px; background:var(--candy-blue); top:60%; left:-5%; animation-delay:-3s; }
+  @keyframes blobFloat {
+    0%,100% { transform:translate(0,0) scale(1); }
+    25% { transform:translate(30px,-20px) scale(1.1); }
+    50% { transform:translate(-15px,15px) scale(0.9); }
+    75% { transform:translate(-25px,-10px) scale(1.05); }
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    position:sticky; top:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 28px; height:54px;
+    background:rgba(18,16,30,0.9); backdrop-filter:blur(30px) saturate(180%);
+    border-bottom:1px solid var(--border);
+  }
+  .header-left { display:flex; align-items:center; gap:14px; }
+  .logo {
+    width:30px; height:30px; border-radius:8px;
+    background: linear-gradient(135deg, var(--candy-pink), var(--candy-purple));
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px; box-shadow: 0 4px 15px rgba(255,102,153,0.3);
+  }
+  .header-title {
+    font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:3px;
+    color: var(--text-dim); text-transform:uppercase;
+  }
+  .header-title b { color: #fff; font-weight: 600; }
+  .header-right { display:flex; gap:24px; align-items:center; font-size:10px; }
+  .h-stat { display:flex; gap:6px; align-items:center; color:var(--text-dim); font-family:'JetBrains Mono',monospace; }
+  .h-stat .val { color: var(--candy-mint); }
+  .live-dot {
+    width:7px; height:7px; border-radius:50%; background:var(--candy-mint);
+    box-shadow:0 0 10px var(--candy-mint); animation:dotBeat 1.5s infinite;
+  }
+  @keyframes dotBeat { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.6)} }
+
+  /* ===== MAIN GRID ===== */
+  .main {
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
+    gap:14px; padding:16px 28px 28px; height:calc(100vh - 54px);
+  }
+
+  /* ===== QUADRANT ===== */
+  .quad {
+    background:var(--surface-1);
+    border:1px solid var(--border);
+    border-radius:14px;
+    display:flex; flex-direction:column;
+    overflow:hidden; position:relative;
+    transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .quad:hover { border-color:var(--border-glow); transform:translateY(-1px); }
+  .quad::before {
+    content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+    pointer-events:none; z-index:0; opacity:0; transition:opacity 0.5s;
+  }
+  .quad:hover::before { opacity:0.4; }
+  .quad:nth-child(1):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-pink-glow), transparent); box-shadow:0 0 60px var(--candy-pink-glow) inset; }
+  .quad:nth-child(2):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-purple-glow), transparent); box-shadow:0 0 60px var(--candy-purple-glow) inset; }
+  .quad:nth-child(3):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-peach-glow), transparent); box-shadow:0 0 60px var(--candy-peach-glow) inset; }
+  .quad:nth-child(4):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-mint-glow), transparent); box-shadow:0 0 60px var(--candy-mint-glow) inset; }
+
+  /* ===== QUAD HEADER ===== */
+  .qh {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 22px 12px; position:relative; z-index:1;
+  }
+  .qh-left { display:flex; align-items:center; gap:10px; }
+  .qh-dot {
+    width:10px; height:10px; border-radius:50%;
+  }
+  .quad:nth-child(1) .qh-dot { background:var(--candy-pink); box-shadow:0 0 12px var(--candy-pink); }
+  .quad:nth-child(2) .qh-dot { background:var(--candy-purple); box-shadow:0 0 12px var(--candy-purple); }
+  .quad:nth-child(3) .qh-dot { background:var(--candy-peach); box-shadow:0 0 12px var(--candy-peach); }
+  .quad:nth-child(4) .qh-dot { background:var(--candy-mint); box-shadow:0 0 12px var(--candy-mint); }
+
+  .qh-label {
+    font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px;
+    text-transform:uppercase; font-weight:600;
+  }
+  .quad:nth-child(1) .qh-label { color:var(--candy-pink); }
+  .quad:nth-child(2) .qh-label { color:var(--candy-purple); }
+  .quad:nth-child(3) .qh-label { color:var(--candy-peach); }
+  .quad:nth-child(4) .qh-label { color:var(--candy-mint); }
+
+  .qh-badge {
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px;
+    padding:4px 12px; border-radius:20px;
+    color:var(--text-dim); background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+  }
+
+  /* ===== QUAD BODY ===== */
+  .qb { flex:1; overflow-y:auto; position:relative; z-index:1; padding:4px 0 8px; }
+  .qb::-webkit-scrollbar { width:3px; }
+  .qb::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+
+  /* ===== METRIC ROW ===== */
+  .met-row {
+    display:grid; gap:8px; padding:0 18px 14px;
+    border-bottom:1px solid rgba(255,255,255,0.03);
+  }
+  .met-3 { grid-template-columns:repeat(3,1fr); }
+  .met-4 { grid-template-columns:repeat(4,1fr); }
+  .met-card {
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:12px; padding:12px 14px;
+    display:flex; flex-direction:column; gap:4px;
+    transition:all 0.25s;
+  }
+  .met-link { cursor:pointer; }
+  .quad:nth-child(1) .met-link:hover { border-color:rgba(255,102,153,0.3); background:var(--surface-3); }
+  .quad:nth-child(2) .met-link:hover { border-color:rgba(179,136,255,0.3); background:var(--surface-3); }
+  .quad:nth-child(3) .met-link:hover { border-color:rgba(255,138,101,0.3); background:var(--surface-3); }
+  .quad:nth-child(4) .met-link:hover { border-color:rgba(80,232,160,0.3); background:var(--surface-3); }
+  .met-label {
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px;
+    color:var(--text-dim); text-transform:uppercase; font-weight:500;
+  }
+  .met-v {
+    font-size:22px; font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.5px;
+  }
+  .quad:nth-child(1) .met-v { background:linear-gradient(135deg, var(--candy-pink), var(--candy-rose)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .quad:nth-child(2) .met-v { background:linear-gradient(135deg, var(--candy-purple), var(--candy-blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .quad:nth-child(3) .met-v { background:linear-gradient(135deg, var(--candy-peach), var(--candy-yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .quad:nth-child(4) .met-v { background:linear-gradient(135deg, var(--candy-mint), var(--candy-blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .met-v-static { color:#fff; }
+  .met-sub {
+    font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim);
+  }
+  .met-sub.up { color:var(--candy-mint); }
+  .met-sub.warn { color:var(--candy-peach); }
+
+  /* ===== IPO RANKING CARD ===== */
+  .ranking-card {
+    background:var(--surface-2); border:1px solid rgba(255,138,101,0.2);
+    border-radius:12px; padding:12px 14px; margin-top:2px;
+  }
+  .ranking-card .rk-label {
+    font-family:'JetBrains Mono',monospace; font-size:7px; letter-spacing:2px;
+    color:var(--candy-peach); text-transform:uppercase; margin-bottom:6px;
+  }
+  .ranking-card .rk-value {
+    font-size:20px; font-weight:700; color:#fff;
+  }
+  .ranking-card .rk-note {
+    font-family:'JetBrains Mono',monospace; font-size:8px; color:var(--text-dim); margin-top:4px;
+  }
+
+  /* ===== NEWS ITEM ===== */
+  .ni {
+    padding:14px 22px; border-left:2px solid transparent;
+    transition:all 0.3s; cursor:pointer;
+    position:relative;
+  }
+  .ni:hover { background:rgba(255,255,255,0.02); }
+  .quad:nth-child(1) .ni:hover { border-left-color:var(--candy-pink); background:rgba(255,102,153,0.03); }
+  .quad:nth-child(2) .ni:hover { border-left-color:var(--candy-purple); background:rgba(179,136,255,0.03); }
+  .quad:nth-child(3) .ni:hover { border-left-color:var(--candy-peach); background:rgba(255,138,101,0.03); }
+  .ni-top { display:flex; gap:12px; align-items:center; margin-bottom:5px; font-size:9px; }
+  .ni-src { font-family:'JetBrains Mono',monospace; font-weight:600; letter-spacing:1px; text-transform:uppercase; }
+  .quad:nth-child(1) .ni-src { color:var(--candy-pink); }
+  .quad:nth-child(2) .ni-src { color:var(--candy-purple); }
+  .quad:nth-child(3) .ni-src { color:var(--candy-peach); }
+  .ni-time { font-family:'JetBrains Mono',monospace; color:var(--text-dim); }
+  .ni-chi {
+    font-family:'JetBrains Mono',monospace; font-size:7px; padding:3px 9px; border-radius:20px;
+    letter-spacing:1.5px; font-weight:700;
+  }
+  .chip-1 { background:var(--candy-pink-glow); color:var(--candy-pink); border:1px solid rgba(255,102,153,0.25); }
+  .chip-2 { background:var(--candy-purple-glow); color:var(--candy-purple); border:1px solid rgba(179,136,255,0.25); }
+  .chip-3 { background:var(--candy-mint-glow); color:var(--candy-mint); border:1px solid rgba(80,232,160,0.25); }
+  .chip-4 { background:var(--candy-peach-glow); color:var(--candy-peach); border:1px solid rgba(255,138,101,0.25); }
+  .chip-5 { background:var(--candy-blue-glow); color:var(--candy-blue); border:1px solid rgba(94,197,249,0.25); }
+  .ni-text { font-size:12.5px; line-height:1.65; color:var(--text); margin-bottom:6px; }
+  .ni-tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag {
+    font-family:'JetBrains Mono',monospace; font-size:8px; padding:2px 8px; border-radius:4px;
+    background:rgba(255,255,255,0.04); color:var(--text-dim); letter-spacing:0.5px;
+  }
+
+  /* ===== Q4: CAROUSEL STOCK + GOLD + FOREX ===== */
+  .q4-body { display:flex; flex-direction:column; padding:0 18px; gap:10px; flex:1; }
+  .carousel-wrap {
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:12px; padding:18px 20px; position:relative; overflow:hidden;
+    min-height:80px; display:flex; flex-direction:column; justify-content:center;
+    transition:all 0.3s;
+  }
+  .carousel-wrap:hover { border-color:rgba(80,232,160,0.3); background:var(--surface-3); }
+  .carousel-inner {
+    display:flex; align-items:center; justify-content:space-between;
+    transition:opacity 0.5s ease-in-out;
+  }
+  .carousel-inner.fade { opacity:0; }
+  .cs-left { display:flex; flex-direction:column; gap:2px; }
+  .cs-sym { font-family:'JetBrains Mono',monospace; font-size:16px; font-weight:700; color:#fff; letter-spacing:1px; }
+  .cs-name { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim); letter-spacing:1px; }
+  .cs-ex { font-size:8px; color:var(--text-muted); font-family:'JetBrains Mono',monospace; }
+  .cs-right { text-align:right; }
+  .cs-price { font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:300; letter-spacing:-1px; }
+  .cs-change { font-family:'JetBrains Mono',monospace; font-size:11px; }
+  .cs-change.up { color:var(--candy-mint); }
+  .cs-change.down { color:var(--candy-pink); }
+  .carousel-dots {
+    display:flex; gap:6px; justify-content:center; margin-top:8px;
+  }
+  .carousel-dots .dot {
+    width:5px; height:5px; border-radius:50%; background:var(--text-muted);
+    transition:all 0.3s; cursor:pointer;
+  }
+  .carousel-dots .dot.active { background:var(--candy-mint); box-shadow:0 0 6px var(--candy-mint); width:16px; border-radius:3px; }
+
+  .gf-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .gf-card {
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:12px; padding:14px 16px;
+    display:flex; flex-direction:column; gap:4px;
+    transition:all 0.25s;
+  }
+  .gf-card:hover { border-color:rgba(80,232,160,0.3); background:var(--surface-3); }
+  .gf-label {
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px;
+    color:var(--text-dim); text-transform:uppercase; font-weight:500;
+  }
+  .gf-icon { font-size:14px; }
+  .gf-price { font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:300; letter-spacing:-1px; color:#fff; }
+  .gf-change { font-family:'JetBrains Mono',monospace; font-size:10px; }
+  .gf-change.up { color:var(--candy-mint); }
+  .gf-change.down { color:var(--candy-pink); }
+
+  /* ===== TICKER ===== */
+  .ticker-wrap {
+    position:fixed; bottom:0; left:0; width:100%; height:26px; z-index:200;
+    background:rgba(18,16,30,0.95); backdrop-filter:blur(15px);
+    border-top:1px solid var(--border);
+    display:flex; align-items:center; overflow:hidden;
+  }
+  .ticker-track {
+    display:flex; gap:40px; animation:tScroll 28s linear infinite;
+    font-family:'JetBrains Mono',monospace; font-size:9px; white-space:nowrap;
+  }
+  @keyframes tScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .tk-item { display:flex; gap:8px; align-items:center; }
+  .tk-sym { font-weight:600; }
+  .tk-px { color:#fff; }
+  .tk-ch.up { color:var(--candy-mint); }
+  .tk-ch.down { color:var(--candy-pink); }
+
+  @media(max-width:1000px) {
+    .main { grid-template-columns:1fr; height:auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div>
+  <div class="blob blob-3"></div><div class="blob blob-4"></div>
+</div>
+
+<header class="header">
+  <div class="header-left">
+    <div class="logo">◈</div>
+    <div class="header-title"><b>全球情报终端</b> &nbsp;GLOBAL INTELLIGENCE TERMINAL</div>
+  </div>
+  <div class="header-right">
+    <div class="h-stat"><span id="clock"></span><span style="color:var(--text-muted)">CST</span></div>
+    <div class="h-stat">新闻 <span class="val">08:00</span> 更新</div>
+    <div class="h-stat">刷新 <span class="val" id="rc">0</span></div>
+    <div class="live-dot"></div>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- Q1: MEDICAL -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh">
+      <div class="qh-left"><div class="qh-dot"></div><span class="qh-label">代谢疾病 · 减重医疗</span></div>
+      <div class="qh-badge">07 条精选</div>
+    </div>
+    <div class="qb">
+      <div class="met-row met-4">
+        <div class="met-card met-link"><div class="met-label">中国成人肥胖率</div><div class="met-v">18.9<span style="font-size:13px;">%</span></div><div class="met-sub">vs 2020: +2.1pp</div></div>
+        <div class="met-card met-link"><div class="met-label">GLP-1 中国 2026E</div><div class="met-v" style="font-size:20px;">¥128<span style="font-size:11px;">亿</span></div><div class="met-sub up">▲ +67% YoY</div></div>
+        <div class="met-card met-link"><div class="met-label">减重门诊覆盖</div><div class="met-v" style="font-size:20px;">二级+</div><div class="met-sub">2026 政策推动</div></div>
+        <div class="met-card met-link"><div class="met-label">在研管线 (中国)</div><div class="met-v">94<span style="font-size:13px;">项</span></div><div class="met-sub">GLP-1 为主</div></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">NEJM</span><span class="ni-time">05.20</span><span class="ni-chi chip-1">BREAKING</span></div>
+        <div class="ni-text">Semaglutide 4 年 CVOT：肥胖非糖尿病人群 MACE ↓26%，全因死亡 ↓18%，GLP-1 心血管获益证据链确立</div>
+        <div class="ni-tags"><span class="tag">GLP-1</span><span class="tag">CVOT</span><span class="tag">里程碑</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">国家卫健委</span><span class="ni-time">05.19</span><span class="ni-chi chip-2">政策</span></div>
+        <div class="ni-text">《体重管理门诊建设标准（2026版）》印发，二级以上医院全覆盖，纳入医保考核指标</div>
+        <div class="ni-tags"><span class="tag">减重门诊</span><span class="tag">分级诊疗</span><span class="tag">医保考核</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">CDE 药审中心</span><span class="ni-time">05.17</span><span class="ni-chi chip-1">审批</span></div>
+        <div class="ni-text">礼来 Tirzepatide 减重适应症在中国获批，BMI≥28 伴并发症人群适用，定价引发行业关注</div>
+        <div class="ni-tags"><span class="tag">GLP-1/GIP</span><span class="tag">进口获批</span><span class="tag">市场准入</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">The Lancet</span><span class="ni-time">05.18</span><span class="ni-chi chip-3">研究</span></div>
+        <div class="ni-text">中国成人肥胖率 18.9%：31 省区市 48 万人群最新横断面，腹型肥胖占 31.2%，防控形势严峻</div>
+        <div class="ni-tags"><span class="tag">流行病学</span><span class="tag">肥胖</span><span class="tag">中国数据</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">多省医保局</span><span class="ni-time">05.16</span><span class="ni-chi chip-2">试点</span></div>
+        <div class="ni-text">"肥胖慢病管理包"医保试点扩至 8 省份：含营养评估 + GLP-1 药物 + 12 个月随访管理</div>
+        <div class="ni-tags"><span class="tag">医保支付</span><span class="tag">慢病管理</span><span class="tag">试点扩展</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2: AI -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh">
+      <div class="qh-left"><div class="qh-dot"></div><span class="qh-label">AI 行业 · 全球态势</span></div>
+      <div class="qh-badge">07 条精选</div>
+    </div>
+    <div class="qb">
+      <div class="met-row met-4">
+        <div class="met-card met-link"><div class="met-label">M7 AI 总市值</div><div class="met-v" style="font-size:16px;">$17.8<span style="font-size:10px;">T</span></div><div class="met-sub up">▲ +32% YTD</div></div>
+        <div class="met-card met-link"><div class="met-label">SOTA 模型 SWE</div><div class="met-v">72.3<span style="font-size:13px;">%</span></div><div class="met-sub">DeepSeek V5</div></div>
+        <div class="met-card met-link"><div class="met-label">GPU 出货 2026E</div><div class="met-v" style="font-size:16px;">8.2<span style="font-size:10px;">M</span></div><div class="met-sub up">▲ +45% YoY</div></div>
+        <div class="met-card met-link"><div class="met-label">推理成本底线</div><div class="met-v">$0.15</div><div class="met-sub">/1M tokens</div></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">DeepSeek</span><span class="ni-time">05.19</span><span class="ni-chi chip-1">BREAKING</span></div>
+        <div class="ni-text">V5 发布：685B MoE 架构，SWE-bench 得分 72.3% 首次超越 Claude Opus 4.7，推理成本降 40%</div>
+        <div class="ni-tags"><span class="tag">国产SOTA</span><span class="tag">MoE</span><span class="tag">代码能力</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">Anthropic</span><span class="ni-time">05.18</span><span class="ni-chi chip-4">能力</span></div>
+        <div class="ni-text">Opus 4.7：Agent 自主执行 4h+ 复杂任务，工具调用成功率 94%，长程规划能力标志性跃升</div>
+        <div class="ni-tags"><span class="tag">Agent</span><span class="tag">长任务</span><span class="tag">工具使用</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">OpenAI</span><span class="ni-time">05.20</span><span class="ni-chi chip-3">产品</span></div>
+        <div class="ni-text">o4-mini 发布：推理成本 $0.15/1M tokens，多模态推理能力接近 GPT-5 mini 水平</div>
+        <div class="ni-tags"><span class="tag">推理模型</span><span class="tag">降本</span><span class="tag">多模态</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">NVIDIA</span><span class="ni-time">05.16</span><span class="ni-chi chip-4">算力</span></div>
+        <div class="ni-text">Rubin Ultra 量产提前至 Q3 2026：单卡 600W / 800 TFLOPS FP8，B300 同步扩产中</div>
+        <div class="ni-tags"><span class="tag">芯片</span><span class="tag">算力</span><span class="tag">Rubin</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">工信部</span><span class="ni-time">05.17</span><span class="ni-chi chip-2">政策</span></div>
+        <div class="ni-text">《AI 赋能新型工业化三年行动计划（2026-2028）》：2028 年工业大模型渗透率目标 60%</div>
+        <div class="ni-tags"><span class="tag">国家战略</span><span class="tag">工业AI</span><span class="tag">国产替代</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3: HK IPO — redesigned with CSRC ranking -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh">
+      <div class="qh-left"><div class="qh-dot"></div><span class="qh-label">港股 IPO · 资本动向</span></div>
+      <div class="qh-badge">PIPELINE · 06</div>
+    </div>
+    <div class="qb">
+      <div class="met-row met-3" style="border-bottom:none;">
+        <div class="met-card met-link"><div class="met-label">最近一周递表</div><div class="met-v">5<span style="font-size:13px;">家</span></div><div class="met-sub up">▲ 港交所主板</div></div>
+        <div class="met-card met-link"><div class="met-label">18A 公司累计递表未挂牌</div><div class="met-v">12<span style="font-size:13px;">家</span></div><div class="met-sub">生物科技章节</div></div>
+        <div class="met-card met-link"><div class="met-label">中证监国际部排队</div><div class="met-v">31<span style="font-size:13px;">家</span></div><div class="met-sub warn">含港股+美股</div></div>
+      </div>
+      <div class="ranking-card" style="margin:0 18px 8px;">
+        <div class="rk-label">◆ 糖吉医疗 · 中证监国际部排队排名 (每周五更新)</div>
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <div class="rk-value" id="tangji-rank">第 -- 位</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);">/ 31 家企业</div>
+        </div>
+        <div class="rk-note" id="tangji-update">数据更新：每周五 · 中证监官网 international.csrc.gov.cn</div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">港交所</span><span class="ni-time">05.20</span><span class="ni-chi chip-4">递表</span></div>
+        <div class="ni-text">蚂蚁集团二次递表：2025 净利润 462 亿元，目标估值 $2,800 亿，最快 7 月挂牌</div>
+        <div class="ni-tags"><span class="tag">超级IPO</span><span class="tag">金融科技</span><span class="tag">蚂蚁</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">港交所</span><span class="ni-time">05.19</span><span class="ni-chi chip-3">聆讯</span></div>
+        <div class="ni-text">SHEIN 通过聆讯：2025 营收 $36.5B(+21% YoY)，6 月中旬挂牌，募资 $15-20 亿</div>
+        <div class="ni-tags"><span class="tag">跨境电商</span><span class="tag">聆讯通过</span><span class="tag">SHEIN</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">港交所</span><span class="ni-time">05.16</span><span class="ni-chi chip-5">定价</span></div>
+        <div class="ni-text">宁德时代港股定价 238-268 港元/股，2026E PE 14-16x，6 月 5 日正式挂牌交易</div>
+        <div class="ni-tags"><span class="tag">新能源</span><span class="tag">定价区间</span><span class="tag">宁德时代</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">明报</span><span class="ni-time">05.18</span><span class="ni-chi chip-3">聆讯</span></div>
+        <div class="ni-text">地平线机器人通过聆讯：估值 $85 亿，2025 营收 46 亿(+178% YoY)，智驾芯片龙头</div>
+        <div class="ni-tags"><span class="tag">自动驾驶</span><span class="tag">芯片</span><span class="tag">地平线</span></div>
+      </div>
+      <div class="ni">
+        <div class="ni-top"><span class="ni-src">信报</span><span class="ni-time">05.15</span><span class="ni-chi chip-4">启动</span></div>
+        <div class="ni-text">小红书启动港股 IPO：委任高盛、摩根士丹利为联席保荐人，最快 H2 递交 A1 表格</div>
+        <div class="ni-tags"><span class="tag">社交媒体</span><span class="tag">IPO启动</span><span class="tag">小红书</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4: STOCKS + GOLD + FOREX — redesigned with carousel -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh">
+      <div class="qh-left"><div class="qh-dot"></div><span class="qh-label">科技巨头 · 黄金 · 人民币汇率</span></div>
+      <div class="qh-badge" style="color:var(--candy-mint);border-color:rgba(80,232,160,0.2);">◆ LIVE</div>
+    </div>
+    <div class="q4-body">
+      <div class="carousel-wrap">
+        <div class="carousel-inner" id="carouselInner">
+          <div class="cs-left">
+            <div class="cs-sym" id="cs-sym">--</div>
+            <div class="cs-name" id="cs-name">--</div>
+            <div class="cs-ex" id="cs-ex">--</div>
+          </div>
+          <div class="cs-right">
+            <div class="cs-price" id="cs-price" style="color:var(--candy-mint)">--</div>
+            <div class="cs-change up" id="cs-change">--</div>
+          </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <div class="gf-row">
+        <div class="gf-card">
+          <div class="gf-label"><span style="margin-right:4px;">🥇</span> 现货黄金 XAU/USD</div>
+          <div class="gf-price" id="gold-price" style="color:var(--candy-gold)">$--</div>
+          <div class="gf-change" id="gold-change">--</div>
+        </div>
+        <div class="gf-card">
+          <div class="gf-label"><span style="margin-right:4px;">💱</span> 离岸人民币 USDCNH</div>
+          <div class="gf-price" id="fx-price">--</div>
+          <div class="gf-change" id="fx-change">--</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<script>
+setInterval(() => {
+  document.getElementById('clock').textContent =
+    new Date().toLocaleString('zh-CN', {timeZone:'Asia/Shanghai',hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}, 1000);
+
+function updateMouse(el) {
+  const r = el.getBoundingClientRect();
+  el.style.setProperty('--mx', (event.clientX - r.left) + 'px');
+  el.style.setProperty('--my', (event.clientY - r.top) + 'px');
+}
+
+// ===== STOCK CAROUSEL =====
+const STOCKS = [
+  { id:'aapl', sym:'AAPL', name:'Apple Inc.', ex:'NASDAQ' },
+  { id:'msft', sym:'MSFT', name:'Microsoft', ex:'NASDAQ' },
+  { id:'nvda', sym:'NVDA', name:'NVIDIA', ex:'NASDAQ' },
+  { id:'googl', sym:'GOOGL', name:'Alphabet', ex:'NASDAQ' },
+  { id:'meta', sym:'META', name:'Meta Platforms', ex:'NASDAQ' },
+  { id:'tsla', sym:'TSLA', name:'Tesla Inc.', ex:'NASDAQ' },
+  { id:'9988', sym:'9988.HK', name:'阿里巴巴', ex:'HKEX', c:'HK$' },
+  { id:'0700', sym:'0700.HK', name:'腾讯控股', ex:'HKEX', c:'HK$' },
+];
+
+let currentIdx = 0;
+let stockData = {};
+const stockIcons = ['AAPL','MSFT','NVDA','GOOGL','META','TSLA','9988','0700'];
+
+// Build carousel dots
+const dotsEl = document.getElementById('carouselDots');
+STOCKS.forEach((s, i) => {
+  dotsEl.innerHTML += `<span class="dot${i===0?' active':''}" onclick="switchStock(${i})"></span>`;
+});
+
+function switchStock(idx) {
+  currentIdx = idx;
+  document.querySelectorAll('.carousel-dots .dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  const inner = document.getElementById('carouselInner');
+  inner.classList.add('fade');
+  setTimeout(() => { renderCurrentStock(); inner.classList.remove('fade'); }, 400);
+}
+
+function renderCurrentStock() {
+  const s = STOCKS[currentIdx], d = stockData[s.id], c = s.c||'$';
+  document.getElementById('cs-sym').textContent = s.sym;
+  document.getElementById('cs-name').textContent = s.name;
+  document.getElementById('cs-ex').textContent = s.ex;
+  if (d) {
+    const up = d.ch >= 0;
+    document.getElementById('cs-price').textContent = `${c}${d.px.toFixed(2)}`;
+    document.getElementById('cs-price').style.color = up ? 'var(--candy-mint)' : 'var(--candy-pink)';
+    document.getElementById('cs-change').className = 'cs-change '+(up?'up':'down');
+    document.getElementById('cs-change').innerHTML = `${up?'+':''}${d.pct.toFixed(2)}% · ${up?'▲':'▼'} ${c}${Math.abs(d.ch).toFixed(2)}`;
+  }
+}
+
+// Auto-rotate every 4 seconds
+setInterval(() => { switchStock((currentIdx+1) % STOCKS.length); }, 4000);
+
+// Ticker
+const tt = document.getElementById('tickerTrack');
+STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">${s.sym}</span><span class="tk-px" id="tkp-${s.id}">--</span><span class="tk-ch" id="tkc-${s.id}">--</span></span>`);
+STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">${s.sym}</span><span class="tk-px">--</span><span class="tk-ch">--</span></span>`);
+
+let rc = 0;
+async function fetchStocks() {
+  try {
+    const symbols = STOCKS.map(s => s.sym).join('%2C') + '%2CGC%3DF%2CUSDCNH%3DX';
+    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${symbols}?range=1d&interval=5m`);
+    const d = await r.json(); const results = d?.chart?.result; if(!results) return;
+
+    // Parse stocks
+    STOCKS.forEach((s,i) => {
+      const m = results[i]?.meta; if(!m) return;
+      const px = m.regularMarketPrice, prev = m.previousClose||m.chartPreviousClose;
+      const ch = px-prev, pct = prev?(ch/prev*100):0, up = ch>=0, c = s.c||'$';
+      stockData[s.id] = { px, ch, pct, up };
+
+      // Ticker
+      const tp=document.getElementById(`tkp-${s.id}`), tc=document.getElementById(`tkc-${s.id}`);
+      if(tp)tp.textContent=c+px.toFixed(2);
+      if(tc){tc.className='tk-ch '+(up?'up':'down');tc.textContent=`${up?'+':''}${pct.toFixed(2)}%`;}
+    });
+
+    // Gold (GC=F, index 8)
+    if (results[8]?.meta) {
+      const gm = results[8].meta, gpx = gm.regularMarketPrice, gprev = gm.previousClose||gm.chartPreviousClose;
+      const gch = gpx-gprev, gpct = gprev?(gch/gprev*100):0, gup = gch>=0;
+      document.getElementById('gold-price').textContent = `$${gpx.toFixed(2)}`;
+      const gcEl = document.getElementById('gold-change');
+      gcEl.className = 'gf-change '+(gup?'up':'down');
+      gcEl.innerHTML = `${gup?'+':''}${gpct.toFixed(2)}% · ${gup?'▲':'▼'} $${Math.abs(gch).toFixed(2)}`;
+    }
+
+    // USDCNH (index 9)
+    if (results[9]?.meta) {
+      const fm = results[9].meta, fpx = fm.regularMarketPrice, fprev = fm.previousClose||fm.chartPreviousClose;
+      const fch = fpx-fprev, fpct = fprev?(fch/fprev*100):0, fup = fch>=0;
+      document.getElementById('fx-price').textContent = `${fpx.toFixed(4)}`;
+      const fcEl = document.getElementById('fx-change');
+      fcEl.className = 'gf-change '+(fup?'up':'down');
+      fcEl.innerHTML = `${fup?'+':''}${fpct.toFixed(3)}% · ${fup?'▲':'▼'} ${Math.abs(fch).toFixed(4)}`;
+    }
+
+    renderCurrentStock();
+    rc++; document.getElementById('rc').textContent = rc;
+  } catch(e) { console.log(e.message); }
+}
+fetchStocks(); setInterval(fetchStocks, 30000);
+
+// ===== CSRC Ranking (Mock — replaced by scraping every Friday) =====
+function updateCSRCRanking() {
+  // This should be replaced with actual scraping from csrc.gov.cn every Friday
+  const rank = '18';
+  document.getElementById('tangji-rank').textContent = `第 ${rank} 位`;
+  document.getElementById('tangji-update').textContent = `数据更新：每周五 · 中证监官网 · 上次更新 ${new Date().toLocaleDateString('zh-CN')}`;
+}
+updateCSRCRanking();
+</script>
+</body>
+</html>

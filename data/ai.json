@@ -1,0 +1,112 @@
+{
+  "updated": "2026-05-22T08:00:00+08:00",
+  "source": "manual_curated + rss",
+  "metrics": {
+    "m7_mcap": {
+      "value": "17.8",
+      "unit": "T",
+      "note": "+32% YTD"
+    },
+    "sota_swe": {
+      "value": "72.3",
+      "unit": "%",
+      "note": "DeepSeek V5"
+    },
+    "gpu_2026e": {
+      "value": "8.2",
+      "unit": "M",
+      "note": "+45% YoY"
+    },
+    "infer_cost": {
+      "value": "0.15",
+      "unit": "",
+      "note": "/1M tokens"
+    }
+  },
+  "articles": [
+    {
+      "title": "V5 发布：685B MoE 架构，SWE-bench 得分 72.3% 首次超越 Claude Opus 4.7，推理成本降 40%",
+      "source": "DeepSeek",
+      "date": "05.19",
+      "badge": "BREAKING",
+      "badge_type": "chip-1",
+      "tags": [
+        "国产SOTA",
+        "MoE",
+        "代码能力"
+      ]
+    },
+    {
+      "title": "Opus 4.7：Agent 自主执行 4h+ 复杂任务，工具调用成功率 94%，长程规划能力标志性跃升",
+      "source": "Anthropic",
+      "date": "05.18",
+      "badge": "能力",
+      "badge_type": "chip-4",
+      "tags": [
+        "Agent",
+        "长任务",
+        "工具使用"
+      ]
+    },
+    {
+      "title": "o4-mini 发布：推理成本 $0.15/1M tokens，多模态推理能力接近 GPT-5 mini 水平",
+      "source": "OpenAI",
+      "date": "05.20",
+      "badge": "产品",
+      "badge_type": "chip-3",
+      "tags": [
+        "推理模型",
+        "降本",
+        "多模态"
+      ]
+    },
+    {
+      "title": "Rubin Ultra 量产提前至 Q3 2026：单卡 600W / 800 TFLOPS FP8，B300 同步扩产中",
+      "source": "NVIDIA",
+      "date": "05.16",
+      "badge": "算力",
+      "badge_type": "chip-4",
+      "tags": [
+        "芯片",
+        "算力",
+        "Rubin"
+      ]
+    },
+    {
+      "title": "《AI 赋能新型工业化三年行动计划（2026-2028）》：2028 年工业大模型渗透率目标 60%",
+      "source": "工信部",
+      "date": "05.17",
+      "badge": "政策",
+      "badge_type": "chip-2",
+      "tags": [
+        "国家战略",
+        "工业AI",
+        "国产替代"
+      ]
+    },
+    {
+      "title": "Optimus 进入上海工厂产线实测：500+ 独立操作技能，2027 年目标外销",
+      "source": "Tesla",
+      "date": "05.15",
+      "badge": "具身",
+      "badge_type": "chip-5",
+      "tags": [
+        "具身智能",
+        "人形机器人",
+        "量产"
+      ]
+    },
+    {
+      "title": "豆包大模型日调用突破 8 万亿 tokens，API 收入连续 8 个月增长 25%+",
+      "source": "字节跳动",
+      "date": "05.14",
+      "badge": "生态",
+      "badge_type": "chip-5",
+      "tags": [
+        "应用层",
+        "字节",
+        "生态"
+      ]
+    }
+  ]
+}

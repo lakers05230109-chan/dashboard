@@ -1,0 +1,102 @@
+{
+  "updated": "2026-05-22T08:00:00+08:00",
+  "source": "manual_curated + rss",
+  "metrics": {
+    "week_filings": {
+      "value": "5",
+      "unit": "家",
+      "note": "港交所主板"
+    },
+    "biotech_18a": {
+      "value": "12",
+      "unit": "家",
+      "note": "18A 未挂牌"
+    },
+    "csrc_queue": {
+      "value": "31",
+      "unit": "家",
+      "note": "含港股+美股"
+    }
+  },
+  "csrc": {
+    "tangji_rank": 18,
+    "total": 31,
+    "updated": "2026-05-22",
+    "source": "中证监国际部",
+    "note": "每周五更新"
+  },
+  "articles": [
+    {
+      "title": "蚂蚁集团二次递表：2025 净利润 462 亿元，目标估值 $2,800 亿，最快 7 月挂牌",
+      "source": "港交所",
+      "date": "05.20",
+      "badge": "递表",
+      "badge_type": "chip-4",
+      "tags": [
+        "超级IPO",
+        "金融科技",
+        "蚂蚁"
+      ]
+    },
+    {
+      "title": "SHEIN 通过聆讯：2025 营收 $36.5B(+21% YoY)，6 月中旬挂牌，募资 $15-20 亿",
+      "source": "港交所",
+      "date": "05.19",
+      "badge": "聆讯",
+      "badge_type": "chip-3",
+      "tags": [
+        "跨境电商",
+        "聆讯通过",
+        "SHEIN"
+      ]
+    },
+    {
+      "title": "宁德时代港股定价 238-268 港元/股，2026E PE 14-16x，6 月 5 日正式挂牌交易",
+      "source": "港交所",
+      "date": "05.16",
+      "badge": "定价",
+      "badge_type": "chip-5",
+      "tags": [
+        "新能源",
+        "定价区间",
+        "宁德时代"
+      ]
+    },
+    {
+      "title": "地平线机器人通过聆讯：估值 $85 亿，2025 营收 46 亿(+178% YoY)，智驾芯片龙头",
+      "source": "明报",
+      "date": "05.18",
+      "badge": "聆讯",
+      "badge_type": "chip-3",
+      "tags": [
+        "自动驾驶",
+        "芯片",
+        "地平线"
+      ]
+    },
+    {
+      "title": "小红书启动港股 IPO：委任高盛、摩根士丹利为联席保荐人，最快 H2 递交 A1 表格",
+      "source": "信报",
+      "date": "05.15",
+      "badge": "启动",
+      "badge_type": "chip-4",
+      "tags": [
+        "社交媒体",
+        "IPO启动",
+        "小红书"
+      ]
+    },
+    {
+      "title": "比亚迪半导体提交 A1：分拆上市募资 $30-40 亿港元，IGBT+SiC 国产替代概念",
+      "source": "港交所",
+      "date": "05.14",
+      "badge": "分拆",
+      "badge_type": "chip-4",
+      "tags": [
+        "分拆上市",
+        "半导体",
+        "比亚迪"
+      ]
+    }
+  ]
+}

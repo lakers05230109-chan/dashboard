@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERMINAL · 全球情报终端</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0a14; --surface-1: #12101e; --surface-2: #181628; --surface-3: #1e1b30;
+    --border: rgba(255,255,255,0.05); --border-glow: rgba(255,255,255,0.1);
+    --candy-pink: #ff6699; --candy-pink-glow: rgba(255,102,153,0.2);
+    --candy-purple: #b388ff; --candy-purple-glow: rgba(179,136,255,0.2);
+    --candy-mint: #50e8a0; --candy-mint-glow: rgba(80,232,160,0.2);
+    --candy-blue: #5ec5f9; --candy-blue-glow: rgba(94,197,249,0.2);
+    --candy-peach: #ff8a65; --candy-peach-glow: rgba(255,138,101,0.2);
+    --candy-yellow: #ffd54f; --candy-gold: #ffc107;
+    --text: #e8e6f0; --text-dim: #b8b4d0; --text-muted: #787390;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-serif; -webkit-font-smoothing:antialiased; min-height:100vh; overflow-x:hidden; }
+
+  .blobs { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+  .blob { position:absolute; border-radius:50%; filter:blur(160px); opacity:0.06; animation:blobFloat 20s infinite ease-in-out; }
+  .blob-1 { width:500px; height:500px; background:var(--candy-pink); top:-10%; left:-8%; }
+  .blob-2 { width:450px; height:450px; background:var(--candy-purple); bottom:-15%; right:-5%; animation-delay:-7s; }
+  .blob-3 { width:400px; height:400px; background:var(--candy-mint); top:40%; left:50%; animation-delay:-14s; }
+  .blob-4 { width:350px; height:350px; background:var(--candy-blue); top:60%; left:-5%; animation-delay:-3s; }
+  @keyframes blobFloat { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(30px,-20px) scale(1.1)} 50%{transform:translate(-15px,15px) scale(.9)} 75%{transform:translate(-25px,-10px) scale(1.05)} }
+
+  .header { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 28px; height:54px; background:rgba(18,16,30,.9); backdrop-filter:blur(30px) saturate(180%); border-bottom:1px solid var(--border); }
+  .header-left { display:flex; align-items:center; gap:14px; }
+  .logo { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--candy-pink),var(--candy-purple)); display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:0 4px 15px rgba(255,102,153,.3); }
+  .header-title { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--text-dim); text-transform:uppercase; }
+  .header-title b { color:#fff; font-weight:600; }
+  .header-right { display:flex; gap:24px; align-items:center; font-size:10px; }
+  .h-stat { display:flex; gap:6px; align-items:center; color:var(--text-dim); font-family:'JetBrains Mono',monospace; }
+  .h-stat .val { color:var(--candy-mint); }
+  .live-dot { width:7px; height:7px; border-radius:50%; background:var(--candy-mint); box-shadow:0 0 10px var(--candy-mint); animation:dotBeat 1.5s infinite; }
+  @keyframes dotBeat { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.6)} }
+
+  .main { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:14px; padding:16px 28px 28px; height:calc(100vh - 54px); }
+  .quad { background:var(--surface-1); border:1px solid var(--border); border-radius:14px; display:flex; flex-direction:column; overflow:hidden; position:relative; transition:all .4s cubic-bezier(.4,0,.2,1); }
+  .quad:hover { border-color:var(--border-glow); transform:translateY(-1px); }
+  .quad::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; pointer-events:none; z-index:0; opacity:0; transition:opacity .5s; }
+  .quad:hover::before { opacity:.4; }
+  .quad:nth-child(1):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-pink-glow), transparent); }
+  .quad:nth-child(2):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-purple-glow), transparent); }
+  .quad:nth-child(3):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-peach-glow), transparent); }
+  .quad:nth-child(4):hover::before { background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), var(--candy-mint-glow), transparent); }
+
+  .qh { display:flex; align-items:center; justify-content:space-between; padding:18px 22px 12px; position:relative; z-index:1; }
+  .qh-dot { width:10px; height:10px; border-radius:50%; }
+  .quad:nth-child(1) .qh-dot { background:var(--candy-pink); box-shadow:0 0 12px var(--candy-pink); }
+  .quad:nth-child(2) .qh-dot { background:var(--candy-purple); box-shadow:0 0 12px var(--candy-purple); }
+  .quad:nth-child(3) .qh-dot { background:var(--candy-peach); box-shadow:0 0 12px var(--candy-peach); }
+  .quad:nth-child(4) .qh-dot { background:var(--candy-mint); box-shadow:0 0 12px var(--candy-mint); }
+  .qh-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; }
+  .quad:nth-child(1) .qh-label { color:var(--candy-pink); } .quad:nth-child(2) .qh-label { color:var(--candy-purple); }
+  .quad:nth-child(3) .qh-label { color:var(--candy-peach); } .quad:nth-child(4) .qh-label { color:var(--candy-mint); }
+  .qh-badge { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px; padding:4px 12px; border-radius:20px; color:var(--text-dim); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); }
+
+  .qb { flex:1; overflow-y:auto; position:relative; z-index:1; padding:4px 0 8px; }
+  .qb::-webkit-scrollbar { width:3px; } .qb::-webkit-scrollbar-thumb { background:rgba(255,255,255,.06); border-radius:3px; }
+
+  .met-row { display:grid; gap:8px; padding:0 18px 14px; border-bottom:1px solid rgba(255,255,255,.03); }
+  .met-4 { grid-template-columns:repeat(4,1fr); } .met-3 { grid-template-columns:repeat(3,1fr); }
+  .met-card { background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:12px 14px; display:flex; flex-direction:column; gap:4px; transition:all .25s; cursor:default; }
+  .met-card:hover { background:var(--surface-3); }
+  .met-label { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px; color:var(--text-dim); text-transform:uppercase; font-weight:500; }
+  .met-v { font-size:22px; font-weight:700; color:#fff; line-height:1.1; letter-spacing:-.5px; }
+  .quad:nth-child(1) .met-v { background:linear-gradient(135deg,var(--candy-pink),#ff80ab); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .quad:nth-child(2) .met-v { background:linear-gradient(135deg,var(--candy-purple),var(--candy-blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .quad:nth-child(3) .met-v { background:linear-gradient(135deg,var(--candy-peach),var(--candy-yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .met-sub { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim); }
+  .met-sub.up { color:var(--candy-mint); } .met-sub.warn { color:var(--candy-peach); }
+
+  .ranking-card { background:var(--surface-2); border:1px solid rgba(255,138,101,.2); border-radius:12px; padding:12px 14px; margin:6px 18px 8px; }
+  .ranking-card .rk-label { font-family:'JetBrains Mono',monospace; font-size:7px; letter-spacing:2px; color:var(--candy-peach); text-transform:uppercase; margin-bottom:6px; }
+  .ranking-card .rk-value { font-size:20px; font-weight:700; color:#fff; }
+  .ranking-card .rk-note { font-family:'JetBrains Mono',monospace; font-size:8px; color:var(--text-dim); margin-top:4px; }
+
+  .ni { padding:14px 22px; border-left:2px solid transparent; transition:all .3s; cursor:pointer; position:relative; }
+  .ni:hover { background:rgba(255,255,255,.02); }
+  .quad:nth-child(1) .ni:hover { border-left-color:var(--candy-pink); background:rgba(255,102,153,.03); }
+  .quad:nth-child(2) .ni:hover { border-left-color:var(--candy-purple); background:rgba(179,136,255,.03); }
+  .quad:nth-child(3) .ni:hover { border-left-color:var(--candy-peach); background:rgba(255,138,101,.03); }
+  .ni-top { display:flex; gap:12px; align-items:center; margin-bottom:5px; font-size:9px; }
+  .ni-src { font-family:'JetBrains Mono',monospace; font-weight:600; letter-spacing:1px; text-transform:uppercase; }
+  .quad:nth-child(1) .ni-src { color:var(--candy-pink); } .quad:nth-child(2) .ni-src { color:var(--candy-purple); } .quad:nth-child(3) .ni-src { color:var(--candy-peach); }
+  .ni-time { font-family:'JetBrains Mono',monospace; color:var(--text-dim); }
+  .ni-chi { font-family:'JetBrains Mono',monospace; font-size:7px; padding:3px 9px; border-radius:20px; letter-spacing:1.5px; font-weight:700; }
+  .chip-1 { background:var(--candy-pink-glow); color:var(--candy-pink); border:1px solid rgba(255,102,153,.25); }
+  .chip-2 { background:var(--candy-purple-glow); color:var(--candy-purple); border:1px solid rgba(179,136,255,.25); }
+  .chip-3 { background:var(--candy-mint-glow); color:var(--candy-mint); border:1px solid rgba(80,232,160,.25); }
+  .chip-4 { background:var(--candy-peach-glow); color:var(--candy-peach); border:1px solid rgba(255,138,101,.25); }
+  .chip-5 { background:var(--candy-blue-glow); color:var(--candy-blue); border:1px solid rgba(94,197,249,.25); }
+  .ni-text { font-size:12.5px; line-height:1.65; color:var(--text); margin-bottom:6px; }
+  .ni-tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-family:'JetBrains Mono',monospace; font-size:8px; padding:2px 8px; border-radius:4px; background:rgba(255,255,255,.04); color:var(--text-dim); letter-spacing:.5px; }
+
+  .q4-body { display:flex; flex-direction:column; padding:0 18px; gap:10px; flex:1; }
+  .carousel-wrap { background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:18px 20px; position:relative; overflow:hidden; min-height:80px; display:flex; flex-direction:column; justify-content:center; transition:all .3s; }
+  .carousel-wrap:hover { border-color:rgba(80,232,160,.3); background:var(--surface-3); }
+  .carousel-inner { display:flex; align-items:center; justify-content:space-between; transition:opacity .5s ease-in-out; }
+  .carousel-inner.fade { opacity:0; }
+  .cs-left { display:flex; flex-direction:column; gap:2px; }
+  .cs-sym { font-family:'JetBrains Mono',monospace; font-size:16px; font-weight:700; color:#fff; letter-spacing:1px; }
+  .cs-name { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim); letter-spacing:1px; }
+  .cs-ex { font-size:8px; color:var(--text-muted); font-family:'JetBrains Mono',monospace; }
+  .cs-right { text-align:right; }
+  .cs-price { font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:300; letter-spacing:-1px; }
+  .cs-change { font-family:'JetBrains Mono',monospace; font-size:11px; }
+  .cs-change.up { color:var(--candy-mint); } .cs-change.down { color:var(--candy-pink); }
+  .carousel-dots { display:flex; gap:6px; justify-content:center; margin-top:8px; }
+  .carousel-dots .dot { width:5px; height:5px; border-radius:50%; background:var(--text-muted); transition:all .3s; cursor:pointer; }
+  .carousel-dots .dot.active { background:var(--candy-mint); box-shadow:0 0 6px var(--candy-mint); width:16px; border-radius:3px; }
+
+  .gf-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .gf-card { background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:4px; transition:all .25s; }
+  .gf-card:hover { border-color:rgba(80,232,160,.3); background:var(--surface-3); }
+  .gf-label { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px; color:var(--text-dim); text-transform:uppercase; font-weight:500; }
+  .gf-price { font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:300; letter-spacing:-1px; color:#fff; }
+  .gf-change { font-family:'JetBrains Mono',monospace; font-size:10px; }
+  .gf-change.up { color:var(--candy-mint); } .gf-change.down { color:var(--candy-pink); }
+
+  .ticker-wrap { position:fixed; bottom:0; left:0; width:100%; height:26px; z-index:200; background:rgba(18,16,30,.95); backdrop-filter:blur(15px); border-top:1px solid var(--border); display:flex; align-items:center; overflow:hidden; }
+  .ticker-track { display:flex; gap:40px; animation:tScroll 28s linear infinite; font-family:'JetBrains Mono',monospace; font-size:9px; white-space:nowrap; }
+  @keyframes tScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .tk-item { display:flex; gap:8px; align-items:center; } .tk-sym { font-weight:600; } .tk-px { color:#fff; }
+  .tk-ch.up { color:var(--candy-mint); } .tk-ch.down { color:var(--candy-pink); }
+
+  .updated-badge { font-size:8px; color:var(--text-muted); text-align:center; padding:4px; }
+  @media(max-width:1000px) { .main { grid-template-columns:1fr; height:auto; } }
+</style>
+</head>
+<body>
+
+<div class="blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div><div class="blob blob-4"></div></div>
+
+<header class="header">
+  <div class="header-left">
+    <div class="logo">◈</div>
+    <div class="header-title"><b>全球情报终端</b> &nbsp;GLOBAL INTELLIGENCE TERMINAL</div>
+  </div>
+  <div class="header-right">
+    <div class="h-stat"><span id="clock"></span><span style="color:var(--text-muted)">CST</span></div>
+    <div class="h-stat">新闻 <span class="val" id="news-updated">--</span></div>
+    <div class="h-stat">刷新 <span class="val" id="rc">0</span></div>
+    <div class="live-dot"></div>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- Q1: MEDICAL -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh"><div class="qh-left"><div class="qh-dot"></div><span class="qh-label">代谢疾病 · 减重医疗</span></div><div class="qh-badge" id="med-count">--</div></div>
+    <div class="qb">
+      <div class="met-row met-4" id="med-metrics"></div>
+      <div id="med-news"></div>
+    </div>
+  </div>
+
+  <!-- Q2: AI -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh"><div class="qh-left"><div class="qh-dot"></div><span class="qh-label">AI 行业 · 全球态势</span></div><div class="qh-badge" id="ai-count">--</div></div>
+    <div class="qb">
+      <div class="met-row met-4" id="ai-metrics"></div>
+      <div id="ai-news"></div>
+    </div>
+  </div>
+
+  <!-- Q3: IPO -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh"><div class="qh-left"><div class="qh-dot"></div><span class="qh-label">港股 IPO · 资本动向</span></div><div class="qh-badge" id="ipo-count">--</div></div>
+    <div class="qb">
+      <div class="met-row met-3" id="ipo-metrics" style="border-bottom:none;"></div>
+      <div id="csrc-card"></div>
+      <div id="ipo-news"></div>
+    </div>
+  </div>
+
+  <!-- Q4: STOCKS + GOLD + FOREX -->
+  <div class="quad" onmousemove="updateMouse(this)">
+    <div class="qh"><div class="qh-left"><div class="qh-dot"></div><span class="qh-label">科技巨头 · 黄金 · 人民币汇率</span></div><div class="qh-badge" style="color:var(--candy-mint);border-color:rgba(80,232,160,.2);">◆ LIVE</div></div>
+    <div class="q4-body">
+      <div class="carousel-wrap">
+        <div class="carousel-inner" id="carouselInner">
+          <div class="cs-left"><div class="cs-sym" id="cs-sym">--</div><div class="cs-name" id="cs-name">--</div><div class="cs-ex" id="cs-ex">--</div></div>
+          <div class="cs-right"><div class="cs-price" id="cs-price">--</div><div class="cs-change" id="cs-change">--</div></div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <div class="gf-row">
+        <div class="gf-card"><div class="gf-label">🥇 现货黄金 XAU/USD</div><div class="gf-price" id="gold-price" style="color:var(--candy-gold)">--</div><div class="gf-change" id="gold-change">--</div></div>
+        <div class="gf-card"><div class="gf-label">💱 离岸人民币 USDCNH</div><div class="gf-price" id="fx-price">--</div><div class="gf-change" id="fx-change">--</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<script>
+// ===== CLOCK =====
+setInterval(() => { document.getElementById('clock').textContent = new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'}); }, 1000);
+
+function updateMouse(el) { const r=el.getBoundingClientRect(); el.style.setProperty('--mx',(event.clientX-r.left)+'px'); el.style.setProperty('--my',(event.clientY-r.top)+'px'); }
+
+// ===== DATA LOADING =====
+async function loadJSON(path) {
+  try { const r = await fetch(path); return await r.json(); }
+  catch(e) { console.warn(`Failed to load ${path}:`, e.message); return null; }
+}
+
+function renderMetrics(containerId, metrics, quadClass) {
+  const el = document.getElementById(containerId);
+  if (!el || !metrics) return;
+  const entries = Object.entries(metrics);
+  el.className = `met-row met-${entries.length}`;
+  el.innerHTML = entries.map(([key, m]) => {
+    const val = m.value, unit = m.unit ? `<span style="font-size:13px;">${m.unit}</span>` : '';
+    const subClass = m.note.includes('▲')||m.note.includes('+') ? 'up' : (m.note.includes('warn')?'warn':'');
+    return `<div class="met-card"><div class="met-label">${key.replace(/_/g,' ')}</div><div class="met-v">${val}${unit}</div><div class="met-sub ${subClass}">${m.note}</div></div>`;
+  }).join('');
+}
+
+function renderNews(containerId, articles) {
+  const el = document.getElementById(containerId);
+  if (!el || !articles) return;
+  el.innerHTML = articles.map(a => `
+    <div class="ni">
+      <div class="ni-top"><span class="ni-src">${a.source}</span><span class="ni-time">${a.date}</span>${a.badge ? `<span class="ni-chi ${a.badge_type||'chip-4'}">${a.badge}</span>` : ''}</div>
+      <div class="ni-text">${a.title}</div>
+      ${a.tags ? `<div class="ni-tags">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : ''}
+    </div>`).join('');
+}
+
+function renderCSRC(data) {
+  const el = document.getElementById('csrc-card');
+  if (!el || !data) return;
+  el.innerHTML = `
+    <div class="ranking-card">
+      <div class="rk-label">◆ 糖吉医疗 · 中证监国际部排队排名 (每周五更新)</div>
+      <div style="display:flex;align-items:baseline;gap:12px;">
+        <div class="rk-value">第 ${data.tangji_rank} 位</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);">/ ${data.total} 家企业</div>
+      </div>
+      <div class="rk-note">数据更新：${data.updated} · ${data.source} · ${data.note}</div>
+    </div>`;
+}
+
+// Load all content
+async function init() {
+  const [med, ai, ipo] = await Promise.all([
+    loadJSON('data/medical.json'),
+    loadJSON('data/ai.json'),
+    loadJSON('data/ipo.json')
+  ]);
+
+  if (med) {
+    renderMetrics('med-metrics', med.metrics);
+    renderNews('med-news', med.articles);
+    document.getElementById('med-count').textContent = `${med.articles?.length||0} 条`;
+    if (med.updated) document.getElementById('news-updated').textContent = med.updated.slice(11,16);
+  }
+
+  if (ai) {
+    renderMetrics('ai-metrics', ai.metrics);
+    renderNews('ai-news', ai.articles);
+    document.getElementById('ai-count').textContent = `${ai.articles?.length||0} 条`;
+  }
+
+  if (ipo) {
+    renderMetrics('ipo-metrics', ipo.metrics);
+    renderCSRC(ipo.csrc);
+    renderNews('ipo-news', ipo.articles);
+    document.getElementById('ipo-count').textContent = `${ipo.articles?.length||0} 条`;
+  }
+}
+
+init();
+
+// ===== STOCKS + CAROUSEL =====
+const STOCKS = [
+  { id:'aapl', sym:'AAPL', name:'Apple Inc.', ex:'NASDAQ' },
+  { id:'msft', sym:'MSFT', name:'Microsoft', ex:'NASDAQ' },
+  { id:'nvda', sym:'NVDA', name:'NVIDIA', ex:'NASDAQ' },
+  { id:'googl', sym:'GOOGL', name:'Alphabet', ex:'NASDAQ' },
+  { id:'meta', sym:'META', name:'Meta Platforms', ex:'NASDAQ' },
+  { id:'tsla', sym:'TSLA', name:'Tesla Inc.', ex:'NASDAQ' },
+  { id:'9988', sym:'9988.HK', name:'阿里巴巴', ex:'HKEX', c:'HK$' },
+  { id:'0700', sym:'0700.HK', name:'腾讯控股', ex:'HKEX', c:'HK$' },
+];
+
+let currentIdx = 0, stockData = {};
+
+const dotsEl = document.getElementById('carouselDots');
+STOCKS.forEach((s,i) => dotsEl.innerHTML += `<span class="dot${i===0?' active':''}" onclick="switchStock(${i})"></span>`);
+
+window.switchStock = function(idx) {
+  currentIdx = idx;
+  document.querySelectorAll('.carousel-dots .dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  const inner = document.getElementById('carouselInner'); inner.classList.add('fade');
+  setTimeout(() => { renderCurrentStock(); inner.classList.remove('fade'); }, 400);
+};
+
+function renderCurrentStock() {
+  const s = STOCKS[currentIdx], d = stockData[s.id], c = s.c||'$';
+  document.getElementById('cs-sym').textContent = s.sym;
+  document.getElementById('cs-name').textContent = s.name;
+  document.getElementById('cs-ex').textContent = s.ex;
+  if (d) {
+    const up = d.ch >= 0;
+    document.getElementById('cs-price').textContent = `${c}${d.px.toFixed(2)}`;
+    document.getElementById('cs-price').style.color = up ? 'var(--candy-mint)' : 'var(--candy-pink)';
+    document.getElementById('cs-change').className = 'cs-change '+(up?'up':'down');
+    document.getElementById('cs-change').innerHTML = `${up?'+':''}${d.pct.toFixed(2)}% · ${up?'▲':'▼'} ${c}${Math.abs(d.ch).toFixed(2)}`;
+  }
+}
+setInterval(() => switchStock((currentIdx+1)%STOCKS.length), 4000);
+
+// Ticker
+const tt = document.getElementById('tickerTrack');
+STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">${s.sym}</span><span class="tk-px" id="tkp-${s.id}">--</span><span class="tk-ch" id="tkc-${s.id}">--</span></span>`);
+STOCKS.forEach(s => tt.innerHTML += `<span class="tk-item"><span class="tk-sym">${s.sym}</span><span class="tk-px">--</span><span class="tk-ch">--</span></span>`);
+
+let rc = 0;
+async function fetchFinance() {
+  try {
+    const syms = STOCKS.map(s=>s.sym).join('%2C') + '%2CGC%3DF%2CUSDCNH%3DX';
+    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${syms}?range=1d&interval=5m`);
+    const d = await r.json(); const results = d?.chart?.result; if(!results) return;
+
+    STOCKS.forEach((s,i) => {
+      const m = results[i]?.meta; if(!m) return;
+      const px = m.regularMarketPrice, prev = m.previousClose||m.chartPreviousClose;
+      const ch = px-prev, pct = prev?(ch/prev*100):0, up = ch>=0, c = s.c||'$';
+      stockData[s.id] = { px, ch, pct, up };
+      const tp=document.getElementById(`tkp-${s.id}`), tc=document.getElementById(`tkc-${s.id}`);
+      if(tp)tp.textContent=c+px.toFixed(2);
+      if(tc){tc.className='tk-ch '+(up?'up':'down');tc.textContent=`${up?'+':''}${pct.toFixed(2)}%`;}
+    });
+
+    if (results[8]?.meta) {
+      const gm=results[8].meta, gp=gm.regularMarketPrice, gpr=gm.previousClose||gm.chartPreviousClose;
+      const gc=gp-gpr, gpct=gpr?(gc/gpr*100):0, gu=gc>=0;
+      document.getElementById('gold-price').textContent = `$${gp.toFixed(2)}`;
+      const ge=document.getElementById('gold-change'); ge.className='gf-change '+(gu?'up':'down');
+      ge.innerHTML = `${gu?'+':''}${gpct.toFixed(2)}% · ${gu?'▲':'▼'} $${Math.abs(gc).toFixed(2)}`;
+    }
+
+    if (results[9]?.meta) {
+      const fm=results[9].meta, fp=fm.regularMarketPrice, fpr=fm.previousClose||fm.chartPreviousClose;
+      const fc=fp-fpr, fpct=fpr?(fc/fpr*100):0, fu=fc>=0;
+      document.getElementById('fx-price').textContent = fp.toFixed(4);
+      const fe=document.getElementById('fx-change'); fe.className='gf-change '+(fu?'up':'down');
+      fe.innerHTML = `${fu?'+':''}${fpct.toFixed(3)}% · ${fu?'▲':'▼'} ${Math.abs(fc).toFixed(4)}`;
+    }
+
+    renderCurrentStock();
+    rc++; document.getElementById('rc').textContent = rc;
+  } catch(e) { console.log(e.message); }
+}
+fetchFinance(); setInterval(fetchFinance, 30000);
+</script>
+</body>
+</html>

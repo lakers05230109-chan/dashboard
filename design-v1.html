@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Intelligence Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: #0a0e14;
+    --card-bg: #111720;
+    --border: rgba(255,255,255,0.06);
+    --text: #c9d1d9;
+    --text-dim: #6e7681;
+    --accent-1: #00e5ff;
+    --accent-2: #7c4dff;
+    --accent-3: #ff6e40;
+    --accent-4: #00e676;
+    --red: #ff5252;
+    --green: #00e676;
+    --orange: #ffab40;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ====== BACKGROUND PARTICLES ====== */
+  .particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+  .particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--accent-1);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float 8s infinite ease-in-out;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+
+  /* ====== HEADER ====== */
+  .header {
+    position: relative; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,14,20,0.8);
+    backdrop-filter: blur(20px);
+  }
+  .header h1 {
+    font-size: 20px; font-weight: 400; letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .header-status {
+    display: flex; gap: 20px; align-items: center; font-size: 11px;
+    color: var(--text-dim);
+  }
+  .status-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+    animation: pulse 2s infinite;
+    display: inline-block; margin-right: 6px;
+  }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+  .clock { font-family: 'JetBrains Mono'; font-size: 14px; color: var(--accent-1); }
+
+  /* ====== GRID ====== */
+  .grid {
+    position: relative; z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 32px 32px;
+    height: calc(100vh - 72px);
+  }
+
+  /* ====== CARDS ====== */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 2px;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .card:nth-child(1)::before { background: var(--accent-1); }
+  .card:nth-child(2)::before { background: var(--accent-2); }
+  .card:nth-child(3)::before { background: var(--accent-3); }
+  .card:nth-child(4)::before { background: var(--accent-4); }
+  .card:hover::before { opacity: 1; }
+
+  .card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 12px; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .card:nth-child(1) .card-title { color: var(--accent-1); }
+  .card:nth-child(2) .card-title { color: var(--accent-2); }
+  .card:nth-child(3) .card-title { color: var(--accent-3); }
+  .card:nth-child(4) .card-title { color: var(--accent-4); }
+
+  .card-badge {
+    font-size: 9px; padding: 2px 8px; border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  /* ====== NEWS CARDS (1,2,3) ====== */
+  .news-list { flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 0; }
+  .news-item {
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer; transition: all 0.2s; font-size: 12px; line-height: 1.6;
+  }
+  .news-item:hover { padding-left: 8px; border-left: 2px solid var(--accent-1); }
+  .news-source {
+    font-size: 9px; color: var(--text-dim); margin-bottom: 2px;
+    display: flex; gap: 8px;
+  }
+  .news-source span:last-child { color: var(--accent-1); }
+  .news-title {
+    color: var(--text); font-weight: 400; margin-bottom: 2px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .news-tags { display: flex; gap: 6px; margin-top: 4px; }
+  .tag {
+    font-size: 8px; padding: 1px 6px; border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+
+  /* ====== STOCK CARD (4) ====== */
+  .stock-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1;
+  }
+  .stock-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px; padding: 12px 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: all 0.2s;
+  }
+  .stock-card:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+  .stock-symbol {
+    font-size: 10px; color: var(--text-dim); letter-spacing: 1px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .stock-price {
+    font-size: 20px; font-family: 'JetBrains Mono'; font-weight: 300;
+    color: var(--text); margin: 4px 0;
+  }
+  .stock-change {
+    font-size: 10px; font-family: 'JetBrains Mono';
+    display: flex; gap: 8px; align-items: center;
+  }
+  .stock-change.up { color: var(--green); }
+  .stock-change.down { color: var(--red); }
+  .mini-spark {
+    flex: 1; height: 24px; min-width: 40px;
+  }
+  .mini-spark path { stroke-width: 1.5; fill: none; }
+  .mini-spark.up path { stroke: var(--green); }
+  .mini-spark.down path { stroke: var(--red); }
+
+  /* ====== SCROLLBAR ====== */
+  .news-list::-webkit-scrollbar { width: 3px; }
+  .news-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    .stock-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<header class="header">
+  <h1>GLOBAL INTELLIGENCE DASHBOARD</h1>
+  <div class="header-status">
+    <span><span class="status-dot"></span>实时</span>
+    <span class="clock" id="clock">--</span>
+    <span style="font-size:10px;">数据更新 · 每日 08:00 CST</span>
+    <span style="font-size:10px; color:var(--accent-4);">v1.0</span>
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- ====== QUADRANT 1: MEDICAL ====== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">◆ 代谢性疾病与减重医疗</div>
+      <div class="card-badge">10 条精选</div>
+    </div>
+    <div class="news-list" style="overflow-y:auto;">
+      <div class="news-item">
+        <div class="news-source"><span>NEJM</span><span>2026-05-20</span></div>
+        <div class="news-title">Semaglutide 4-Year Cardiovascular Outcomes Trial Shows 26% MACE Reduction in Obesity Without Diabetes</div>
+        <div class="news-tags"><span class="tag">GLP-1</span><span class="tag">减肥药物</span><span class="tag">心血管</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>国家卫健委</span><span>2026-05-19</span></div>
+        <div class="news-title">国家卫健委发布《体重管理门诊建设标准（2026版）》，要求二级以上医院全覆盖</div>
+        <div class="news-tags"><span class="tag">政策</span><span class="tag">减重门诊</span><span class="tag">分级诊疗</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>The Lancet</span><span>2026-05-18</span></div>
+        <div class="news-title">中国成人肥胖率突破18.9%：基于31省区市48万人群的横断面研究</div>
+        <div class="news-tags"><span class="tag">流行病学</span><span class="tag">肥胖</span><span class="tag">中国数据</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>CDE 药审中心</span><span>2026-05-17</span></div>
+        <div class="news-title">礼来 Tirzepatide 减重适应症在中国获批上市，用于BMI≥28伴并发症</div>
+        <div class="news-tags"><span class="tag">新药审批</span><span class="tag">GLP-1</span><span class="tag">礼来</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>丁香园</span><span>2026-05-16</span></div>
+        <div class="news-title">多省医保局启动"肥胖慢病管理包"支付试点，涵盖营养评估+药物+随访</div>
+        <div class="news-tags"><span class="tag">医保支付</span><span class="tag">政策试点</span><span class="tag">慢病管理</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>JAMA</span><span>2026-05-14</span></div>
+        <div class="news-title">Bariatric Surgery vs Medical Therapy 10-Year Follow-up: Surgical Arm Shows 54% Diabetes Remission</div>
+        <div class="news-tags"><span class="tag">减重外科</span><span class="tag">糖尿病缓解</span><span class="tag">长期随访</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>动脉网</span><span>2026-05-13</span></div>
+        <div class="news-title">2026Q1 中国减重赛道融资盘点：GLP-1口服制剂获最大单笔2.8亿美元</div>
+        <div class="news-tags"><span class="tag">投融资</span><span class="tag">GLP-1口服</span><span class="tag">管线</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== QUADRANT 2: AI ====== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">◆ AI 行业要闻</div>
+      <div class="card-badge">12 条精选</div>
+    </div>
+    <div class="news-list" style="overflow-y:auto;">
+      <div class="news-item">
+        <div class="news-source"><span>OpenAI</span><span>2026-05-20</span></div>
+        <div class="news-title">OpenAI o4-mini 发布，推理成本降至 $0.15/1M tokens，多模态推理能力接近 GPT-5 mini</div>
+        <div class="news-tags"><span class="tag">大模型</span><span class="tag">推理</span><span class="tag">降本</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>DeepSeek</span><span>2026-05-19</span></div>
+        <div class="news-title">DeepSeek V5 参数量 685B，MoE 架构，SWE-bench 得分 72.3% 超越 Claude Opus 4.7</div>
+        <div class="news-tags"><span class="tag">国产模型</span><span class="tag">MoE</span><span class="tag">代码能力</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>Anthropic</span><span>2026-05-18</span></div>
+        <div class="news-title">Claude Opus 4.7 发布：Agent 自主执行能力突破，可完成 4 小时以上复杂任务</div>
+        <div class="news-tags"><span class="tag">Agent</span><span class="tag">长任务</span><span class="tag">Claude</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>工信部</span><span>2026-05-17</span></div>
+        <div class="news-title">中国发布《人工智能赋能新型工业化三年行动计划（2026-2028）》</div>
+        <div class="news-tags"><span class="tag">政策</span><span class="tag">工业AI</span><span class="tag">国产化</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>NVIDIA</span><span>2026-05-16</span></div>
+        <div class="news-title">NVIDIA Rubin Ultra 量产时间表提前至 2026Q3，单卡 600W 800 TFLOPS FP8</div>
+        <div class="news-tags"><span class="tag">算力</span><span class="tag">芯片</span><span class="tag">Rubin</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>TechCrunch</span><span>2026-05-15</span></div>
+        <div class="news-title">Tesla Optimus 进入上海工厂实际产线测试，实现 500+ 独立操作技能</div>
+        <div class="news-tags"><span class="tag">具身智能</span><span class="tag">机器人</span><span class="tag">制造</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>量子位</span><span>2026-05-14</span></div>
+        <div class="news-title">字节跳动豆包大模型日调用量突破 8 万亿 tokens，AI 应用生态加速构建</div>
+        <div class="news-tags"><span class="tag">字节</span><span class="tag">应用层</span><span class="tag">多模态</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== QUADRANT 3: HK IPO ====== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">◆ 港股 IPO 重大事项</div>
+      <div class="card-badge">8 条精选</div>
+    </div>
+    <div class="news-list" style="overflow-y:auto;">
+      <div class="news-item">
+        <div class="news-source"><span>港交所</span><span>2026-05-20</span></div>
+        <div class="news-title">蚂蚁集团二次递表港交所，更新招股书披露 2025 年净利润 462 亿元，目标估值 $2,800 亿</div>
+        <div class="news-tags"><span class="tag">大型IPO</span><span class="tag">金融科技</span><span class="tag">二次递表</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>港交所</span><span>2026-05-19</span></div>
+        <div class="news-title">SHEIN 通过港交所聆讯，预计 6 月中旬挂牌，募资规模约 $15-20 亿</div>
+        <div class="news-tags"><span class="tag">聆讯通过</span><span class="tag">跨境电</span><span class="tag">SHEIN</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>明报</span><span>2026-05-18</span></div>
+        <div class="news-title">地平线机器人通过聆讯，估值 $85 亿，2025 年营收增长 178% 至 46 亿元</div>
+        <div class="news-tags"><span class="tag">聆讯通过</span><span class="tag">自动驾驶</span><span class="tag">芯片</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>港交所</span><span>2026-05-16</span></div>
+        <div class="news-title">宁德时代港股 IPO 定价区间公布：每股 238-268 港元，6 月 5 日挂牌</div>
+        <div class="news-tags"><span class="tag">定价</span><span class="tag">新能源</span><span class="tag">宁德时代</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>信报</span><span>2026-05-15</span></div>
+        <div class="news-title">小红书启动港股 IPO 准备工作，已委任高盛、摩根士丹利为联席保荐人</div>
+        <div class="news-tags"><span class="tag">启动IPO</span><span class="tag">社交媒体</span><span class="tag">小红书</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-source"><span>港交所</span><span>2026-05-14</span></div>
+        <div class="news-title">比亚迪半导体分拆上市，已提交 A1 表格，计划募资 $30-40 亿港元</div>
+        <div class="news-tags"><span class="tag">分拆上市</span><span class="tag">半导体</span><span class="tag">比亚迪</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== QUADRANT 4: STOCKS ====== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">◆ 国际科技大厂 · 实时股价</div>
+      <div class="card-badge" style="color:var(--accent-4);"><span class="status-dot"></span>LIVE</div>
+    </div>
+    <div class="stock-grid">
+      <div class="stock-card">
+        <div class="stock-symbol"><span>AAPL · Apple Inc</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>MSFT · Microsoft</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>NVDA · NVIDIA</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>GOOGL · Alphabet</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>META · Meta</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>TSLA · Tesla</span><span>NASDAQ</span></div>
+        <div class="stock-price">$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>9988 · 阿里巴巴</span><span>HKEX</span></div>
+        <div class="stock-price">HK$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+      <div class="stock-card">
+        <div class="stock-symbol"><span>0700 · 腾讯控股</span><span>HKEX</span></div>
+        <div class="stock-price">HK$--.--</div>
+        <div class="stock-change up">+0.00% · ▲ $0.00</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Particle animation
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100+'%';
+    p.style.animationDelay = Math.random()*8+'s';
+    p.style.animationDuration = (6 + Math.random()*6)+'s';
+    const colors = ['#00e5ff','#7c4dff','#ff6e40','#00e676'];
+    p.style.background = colors[Math.floor(Math.random()*4)];
+    container.appendChild(p);
+  }
+
+  // Live clock
+  function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').textContent =
+      now.toLocaleString('zh-CN', {timeZone:'Asia/Shanghai', hour12:false});
+  }
+  updateClock(); setInterval(updateClock, 1000);
+
+  // Stock data - in production this would be a real API
+  // Placeholder: in final version, use Yahoo Finance / Sina API
+  const stocks = [
+    { symbol: 'AAPL', el: 0 },
+    { symbol: 'MSFT', el: 1 },
+    { symbol: 'NVDA', el: 2 },
+    { symbol: 'GOOGL', el: 3 },
+    { symbol: 'META', el: 4 },
+    { symbol: 'TSLA', el: 5 },
+    { symbol: '9988', el: 6 },
+    { symbol: '0700', el: 7 },
+  ];
+</script>
+
+</body>
+</html>

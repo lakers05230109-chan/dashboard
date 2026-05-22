@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL INTELLIGENCE TERMINAL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+
+  :root {
+    --bg: #020510;
+    --surface: #080d20;
+    --surface2: #0c142d;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #b44dff;
+    --neon-orange: #ff5e1a;
+    --neon-green: #00ff88;
+    --neon-pink: #ff2d95;
+    --hot-red: #ff3333;
+    --text-primary: #e8e8f0;
+    --text-secondary: #8a90b8;
+    --border-subtle: rgba(255,255,255,0.04);
+    --border-glow: rgba(0,240,255,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    cursor: crosshair;
+  }
+
+  /* ===== SCAN LINES OVERLAY ===== */
+  .scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,240,255,0.015) 2px,
+      rgba(0,240,255,0.015) 4px
+    );
+  }
+
+  /* ===== GRID BG ===== */
+  .grid-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: 0.03;
+    background-image:
+      linear-gradient(rgba(0,240,255,0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,240,255,0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 28px;
+    background: rgba(8,13,32,0.92);
+    backdrop-filter: blur(30px) saturate(180%);
+    border-bottom: 1px solid rgba(0,240,255,0.1);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(0,240,255,0.05) inset;
+  }
+  .logo-group {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo-icon {
+    width: 28px; height: 28px;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 3px;
+    background: rgba(0,240,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    animation: logoPulse 3s infinite;
+  }
+  @keyframes logoPulse {
+    0%,100% { box-shadow: 0 0 10px rgba(0,240,255,0.3); }
+    50% { box-shadow: 0 0 25px rgba(0,240,255,0.7); }
+  }
+  .logo-icon span { font-size: 14px; }
+  .header h1 {
+    font-family: 'Share Tech Mono';
+    font-size: 16px; font-weight: 400; letter-spacing: 3px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 20px rgba(0,240,255,0.4);
+  }
+  .header-meta {
+    display: flex; gap: 24px; align-items: center;
+    font-family: 'Share Tech Mono'; font-size: 11px;
+    color: var(--text-secondary);
+  }
+  .live-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 12px;
+    border: 1px solid rgba(0,255,136,0.4);
+    border-radius: 3px;
+    background: rgba(0,255,136,0.05);
+    color: var(--neon-green);
+    font-size: 10px; letter-spacing: 2px;
+    animation: liveGlow 2s infinite;
+  }
+  @keyframes liveGlow {
+    0%,100% { box-shadow: 0 0 5px rgba(0,255,136,0.2); }
+    50% { box-shadow: 0 0 20px rgba(0,255,136,0.6); }
+  }
+  .live-badge .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--neon-green);
+    animation: dotBeat 1s infinite;
+  }
+  @keyframes dotBeat {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.6); }
+  }
+
+  /* ===== MAIN GRID ===== */
+  .main-grid {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    padding: 16px 28px 28px;
+    height: calc(100vh - 68px);
+  }
+
+  /* ===== CARDS ===== */
+  .quadrant {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 18px 22px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .quadrant:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 50px rgba(0,0,0,0.6);
+  }
+  /* Glow borders on hover */
+  .quadrant:nth-child(1):hover { border-color: rgba(0,240,255,0.4); box-shadow: 0 0 40px rgba(0,240,255,0.08), 0 12px 50px rgba(0,0,0,0.6); }
+  .quadrant:nth-child(2):hover { border-color: rgba(180,77,255,0.4); box-shadow: 0 0 40px rgba(180,77,255,0.08), 0 12px 50px rgba(0,0,0,0.6); }
+  .quadrant:nth-child(3):hover { border-color: rgba(255,94,26,0.4); box-shadow: 0 0 40px rgba(255,94,26,0.08), 0 12px 50px rgba(0,0,0,0.6); }
+  .quadrant:nth-child(4):hover { border-color: rgba(0,255,136,0.4); box-shadow: 0 0 40px rgba(0,255,136,0.08), 0 12px 50px rgba(0,0,0,0.6); }
+
+  /* Corner accent */
+  .quadrant::after {
+    content: '';
+    position: absolute; top: -1px; right: -1px;
+    width: 30px; height: 30px;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-radius: 0 0 0 4px;
+    transition: all 0.35s;
+  }
+  .quadrant:nth-child(1)::after { border-color: var(--neon-cyan); }
+  .quadrant:nth-child(2)::after { border-color: var(--neon-purple); }
+  .quadrant:nth-child(3)::after { border-color: var(--neon-orange); }
+  .quadrant:nth-child(4)::after { border-color: var(--neon-green); }
+
+  /* ===== CARD HEADERS ===== */
+  .q-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .q-label {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .q-icon {
+    width: 8px; height: 8px;
+    transform: rotate(45deg);
+  }
+  .quadrant:nth-child(1) .q-icon { background: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+  .quadrant:nth-child(2) .q-icon { background: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+  .quadrant:nth-child(3) .q-icon { background: var(--neon-orange); box-shadow: 0 0 8px var(--neon-orange); }
+  .quadrant:nth-child(4) .q-icon { background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
+
+  .q-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-family: 'Share Tech Mono';
+  }
+  .quadrant:nth-child(1) .q-title { color: var(--neon-cyan); }
+  .quadrant:nth-child(2) .q-title { color: var(--neon-purple); }
+  .quadrant:nth-child(3) .q-title { color: var(--neon-orange); }
+  .quadrant:nth-child(4) .q-title { color: var(--neon-green); }
+
+  .q-count {
+    font-family: 'Share Tech Mono'; font-size: 9px;
+    padding: 3px 10px; border-radius: 2px;
+    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-secondary);
+  }
+
+  /* ===== NEWS LIST ===== */
+  .news-scroll {
+    flex: 1; overflow-y: auto; position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+  }
+  .news-scroll::-webkit-scrollbar { width: 2px; }
+  .news-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.08); border-radius: 2px;
+  }
+
+  .news-item {
+    padding: 11px 14px;
+    margin-bottom: 2px;
+    border-left: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    background: transparent;
+  }
+  .news-item:hover {
+    background: rgba(255,255,255,0.03);
+    transform: translateX(2px);
+  }
+  .quadrant:nth-child(1) .news-item:hover { border-left-color: var(--neon-cyan); }
+  .quadrant:nth-child(2) .news-item:hover { border-left-color: var(--neon-purple); }
+  .quadrant:nth-child(3) .news-item:hover { border-left-color: var(--neon-orange); }
+
+  .ni-meta {
+    display: flex; gap: 10px; align-items: center;
+    font-family: 'Share Tech Mono'; font-size: 9px;
+    margin-bottom: 4px;
+  }
+  .ni-source {
+    color: var(--text-secondary); letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .ni-date { color: rgba(255,255,255,0.25); }
+  .ni-impact {
+    font-size: 8px; padding: 1px 6px; border-radius: 2px;
+    letter-spacing: 1px; font-weight: 600;
+  }
+  .impact-high { background: rgba(255,51,51,0.15); color: var(--hot-red); border: 1px solid rgba(255,51,51,0.3); }
+  .impact-mid { background: rgba(255,171,64,0.1); color: #ffab40; border: 1px solid rgba(255,171,64,0.2); }
+  .impact-note { background: rgba(0,240,255,0.08); color: var(--neon-cyan); border: 1px solid rgba(0,240,255,0.2); }
+
+  .ni-title {
+    font-size: 12.5px; line-height: 1.55; font-weight: 400; color: var(--text-primary);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .ni-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .tag {
+    font-size: 8px; padding: 2px 7px; border-radius: 2px;
+    background: rgba(255,255,255,0.04);
+    color: var(--text-secondary);
+    letter-spacing: 0.5px; font-family: 'Share Tech Mono';
+  }
+
+  /* ===== STOCK GRID ===== */
+  .stock-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; flex: 1; position: relative; z-index: 1;
+  }
+  .stock-card {
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 6px; padding: 12px 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .stock-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 2px; height: 100%;
+    background: transparent; transition: background 0.3s;
+  }
+  .stock-card:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(0,255,136,0.3);
+    box-shadow: 0 0 20px rgba(0,255,136,0.05);
+  }
+  .stock-card:hover::before { background: var(--neon-green); }
+
+  .sc-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .sc-name {
+    font-size: 10px; color: var(--text-secondary);
+    letter-spacing: 1px; font-family: 'Share Tech Mono';
+  }
+  .sc-exchange {
+    font-size: 8px; color: rgba(255,255,255,0.2);
+    letter-spacing: 1px; font-family: 'Share Tech Mono';
+  }
+  .sc-price {
+    font-family: 'Share Tech Mono'; font-size: 22px; font-weight: 300;
+    color: #fff; margin: 6px 0; letter-spacing: -1px;
+  }
+  .sc-change {
+    display: flex; gap: 10px; align-items: center;
+    font-family: 'Share Tech Mono'; font-size: 11px;
+  }
+  .sc-change.up { color: var(--neon-green); }
+  .sc-change.down { color: var(--hot-red); }
+  .sc-spark {
+    flex: 1; height: 28px; min-width: 50px;
+    opacity: 0.7;
+  }
+  .sc-spark.up path { stroke: var(--neon-green); }
+  .sc-spark.down path { stroke: var(--hot-red); }
+
+  /* ===== TICKER BAR ===== */
+  .ticker-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    z-index: 200;
+    background: rgba(8,13,32,0.95);
+    border-top: 1px solid rgba(0,240,255,0.1);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    height: 28px;
+    display: flex; align-items: center;
+  }
+  .ticker-track {
+    display: flex; gap: 40px;
+    animation: tickerScroll 30s linear infinite;
+    font-family: 'Share Tech Mono'; font-size: 10px;
+    white-space: nowrap;
+  }
+  @keyframes tickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .ticker-item { display: flex; gap: 8px; align-items: center; letter-spacing: 1px; }
+  .ticker-symbol { color: var(--neon-cyan); }
+  .ticker-price { color: #fff; }
+  .ticker-change.up { color: var(--neon-green); }
+  .ticker-change.down { color: var(--hot-red); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1000px) {
+    .main-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    .stock-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="grid-bg"></div>
+
+<header class="header">
+  <div class="logo-group">
+    <div class="logo-icon"><span>◈</span></div>
+    <h1>GLOBAL INTELLIGENCE TERMINAL</h1>
+  </div>
+  <div class="header-meta">
+    <span id="clock" style="color:var(--neon-cyan);">--</span>
+    <span>◆</span>
+    <span style="color:var(--text-secondary);">新闻更新 08:00 CST · 股价 实时</span>
+    <div class="live-badge"><span class="dot"></span>LIVE</div>
+  </div>
+</header>
+
+<div class="main-grid">
+
+  <!-- ====== Q1: MEDICAL ====== -->
+  <div class="quadrant">
+    <div class="q-header">
+      <div class="q-label">
+        <div class="q-icon"></div>
+        <span class="q-title">代谢疾病 · 减重医疗</span>
+      </div>
+      <div class="q-count">SELECTED · 07</div>
+    </div>
+    <div class="news-scroll">
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">NEJM</span><span class="ni-date">05.20</span>
+          <span class="ni-impact impact-high">BREAKING</span>
+        </div>
+        <div class="ni-title">Semaglutide 4 年心血管结局试验：肥胖非糖尿病人群 MACE 降低 26%，全因死亡降低 18%</div>
+        <div class="ni-tags"><span class="tag">GLP-1</span><span class="tag">CVOT</span><span class="tag">里程碑</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">国家卫健委</span><span class="ni-date">05.19</span>
+          <span class="ni-impact impact-high">政策</span>
+        </div>
+        <div class="ni-title">《体重管理门诊建设标准（2026版）》印发：二级以上医院全覆盖，纳入医保考核</div>
+        <div class="ni-tags"><span class="tag">政策</span><span class="tag">减重门诊</span><span class="tag">分级诊疗</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">CDE 药审中心</span><span class="ni-date">05.17</span>
+          <span class="ni-impact impact-high">审批</span>
+        </div>
+        <div class="ni-title">礼来 Tirzepatide 减重适应症中国获批，覆盖 BMI≥28 伴并发症人群，定价引发关注</div>
+        <div class="ni-tags"><span class="tag">新药审批</span><span class="tag">GLP-1/GIP</span><span class="tag">礼来</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">The Lancet</span><span class="ni-date">05.18</span>
+          <span class="ni-impact impact-mid">研究</span>
+        </div>
+        <div class="ni-title">中国成人肥胖率突破 18.9%：31 省区市 48 万人群最新横断面研究</div>
+        <div class="ni-tags"><span class="tag">流行病学</span><span class="tag">肥胖</span><span class="tag">中国数据</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">医保局</span><span class="ni-date">05.16</span>
+          <span class="ni-impact impact-mid">支付</span>
+        </div>
+        <div class="ni-title">多省启动"肥胖慢病管理包"医保试点：含营养评估 + GLP-1 药物 + 12个月随访</div>
+        <div class="ni-tags"><span class="tag">医保支付</span><span class="tag">慢病管理</span><span class="tag">试点</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">动脉网</span><span class="ni-date">05.13</span>
+          <span class="ni-impact impact-mid">融资</span>
+        </div>
+        <div class="ni-title">2026 Q1 中国减重赛道融资 8.6 亿美元：口服 GLP-1 获批最大单笔 2.8 亿美元</div>
+        <div class="ni-tags"><span class="tag">投融资</span><span class="tag">口服GLP-1</span><span class="tag">管线追踪</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">JAMA</span><span class="ni-date">05.14</span>
+          <span class="ni-impact impact-note">长期</span>
+        </div>
+        <div class="ni-title">代谢手术 vs 药物治疗 10 年随访：手术组 2 型糖尿病缓解率 54%，显著优于药物</div>
+        <div class="ni-tags"><span class="tag">减重外科</span><span class="tag">糖尿病缓解</span><span class="tag">10年证据</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== Q2: AI ====== -->
+  <div class="quadrant">
+    <div class="q-header">
+      <div class="q-label">
+        <div class="q-icon"></div>
+        <span class="q-title">AI 行业 · 全球态势</span>
+      </div>
+      <div class="q-count">SELECTED · 07</div>
+    </div>
+    <div class="news-scroll">
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">DeepSeek</span><span class="ni-date">05.19</span>
+          <span class="ni-impact impact-high">BREAKING</span>
+        </div>
+        <div class="ni-title">DeepSeek V5 发布：685B MoE，SWE-bench 72.3%，首次超越 Claude Opus 4.7，推理成本降 40%</div>
+        <div class="ni-tags"><span class="tag">国产</span><span class="tag">MoE</span><span class="tag">代码SOTA</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">OpenAI</span><span class="ni-date">05.20</span>
+          <span class="ni-impact impact-high">产品</span>
+        </div>
+        <div class="ni-title">OpenAI o4-mini 发布：推理 $0.15/1M tokens，多模态，GPT-5 系列降本路径清晰</div>
+        <div class="ni-tags"><span class="tag">推理模型</span><span class="tag">降本</span><span class="tag">多模态</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">Anthropic</span><span class="ni-date">05.18</span>
+          <span class="ni-impact impact-high">能力</span>
+        </div>
+        <div class="ni-title">Claude Opus 4.7：Agent 自主执行 4 小时以上复杂任务，工具调用成功率 94%</div>
+        <div class="ni-tags"><span class="tag">Agent</span><span class="tag">长任务</span><span class="tag">工具使用</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">NVIDIA</span><span class="ni-date">05.16</span>
+          <span class="ni-impact impact-high">算力</span>
+        </div>
+        <div class="ni-title">Rubin Ultra 量产提前至 Q3 2026：单卡 600W / 800 TFLOPS FP8，B300 同步扩产</div>
+        <div class="ni-tags"><span class="tag">芯片</span><span class="tag">算力</span><span class="tag">Rubin</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">工信部</span><span class="ni-date">05.17</span>
+          <span class="ni-impact impact-mid">政策</span>
+        </div>
+        <div class="ni-title">《AI 赋能新型工业化三年行动计划（2026-2028）》发布，重点攻坚工业大模型</div>
+        <div class="ni-tags"><span class="tag">政策</span><span class="tag">工业AI</span><span class="tag">国产替代</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">Tesla</span><span class="ni-date">05.15</span>
+          <span class="ni-impact impact-mid">具身</span>
+        </div>
+        <div class="ni-title">Optimus 进入上海工厂产线实测：500+ 独立操作技能，2027 年目标外销</div>
+        <div class="ni-tags"><span class="tag">具身智能</span><span class="tag">人形机器人</span><span class="tag">量产</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">字节跳动</span><span class="ni-date">05.14</span>
+          <span class="ni-impact impact-mid">生态</span>
+        </div>
+        <div class="ni-title">豆包大模型日调用突破 8 万亿 tokens，API 收入连续 8 个月增长 25%+</div>
+        <div class="ni-tags"><span class="tag">应用层</span><span class="tag">字节</span><span class="tag">生态</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== Q3: HK IPO ====== -->
+  <div class="quadrant">
+    <div class="q-header">
+      <div class="q-label">
+        <div class="q-icon"></div>
+        <span class="q-title">港股 IPO · 资本动向</span>
+      </div>
+      <div class="q-count">SELECTED · 06</div>
+    </div>
+    <div class="news-scroll">
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">港交所</span><span class="ni-date">05.20</span>
+          <span class="ni-impact impact-high">二次递表</span>
+        </div>
+        <div class="ni-title">蚂蚁集团更新招股书：2025 净利润 462 亿元，目标估值 $2,800 亿，最快 7 月挂牌</div>
+        <div class="ni-tags"><span class="tag">超级IPO</span><span class="tag">金融科技</span><span class="tag">蚂蚁</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">港交所</span><span class="ni-date">05.19</span>
+          <span class="ni-impact impact-high">聆讯通过</span>
+        </div>
+        <div class="ni-title">SHEIN 通过聆讯：2025 营收 $36.5B 同比 +21%，预计 6 月中旬挂牌募资 $15-20 亿</div>
+        <div class="ni-tags"><span class="tag">聆讯</span><span class="tag">跨境电商</span><span class="tag">SHEIN</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">港交所</span><span class="ni-date">05.16</span>
+          <span class="ni-impact impact-high">定价</span>
+        </div>
+        <div class="ni-title">宁德时代港股定价：238-268 港元/股，对应 2026E PE 14-16x，6 月 5 日挂牌交易</div>
+        <div class="ni-tags"><span class="tag">定价</span><span class="tag">新能源</span><span class="tag">宁德时代</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">明报</span><span class="ni-date">05.18</span>
+          <span class="ni-impact impact-mid">聆讯通过</span>
+        </div>
+        <div class="ni-title">地平线机器人通过聆讯：估值 $85 亿，2025 营收 46 亿元（+178% YoY），智驾芯片龙头</div>
+        <div class="ni-tags"><span class="tag">自动驾驶</span><span class="tag">芯片</span><span class="tag">地平线</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">信报</span><span class="ni-date">05.15</span>
+          <span class="ni-impact impact-mid">启动</span>
+        </div>
+        <div class="ni-title">小红书启动港股 IPO：已委任高盛、摩根士丹利为联席保荐人，最快 H2 递表</div>
+        <div class="ni-tags"><span class="tag">启动IPO</span><span class="tag">社交媒体</span><span class="tag">小红书</span></div>
+      </div>
+      <div class="news-item">
+        <div class="ni-meta">
+          <span class="ni-source">港交所</span><span class="ni-date">05.14</span>
+          <span class="ni-impact impact-mid">分拆</span>
+        </div>
+        <div class="ni-title">比亚迪半导体提交 A1：分拆上市募资 $30-40 亿港元，IGBT+SiC 国产替代概念</div>
+        <div class="ni-tags"><span class="tag">分拆上市</span><span class="tag">半导体</span><span class="tag">比亚迪</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== Q4: STOCKS ====== -->
+  <div class="quadrant">
+    <div class="q-header">
+      <div class="q-label">
+        <div class="q-icon"></div>
+        <span class="q-title">科技巨头 · 实时股价</span>
+      </div>
+      <div class="q-count" style="color:var(--neon-green); border-color:rgba(0,255,136,0.3);">◆ LIVE</div>
+    </div>
+    <div class="stock-grid">
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">AAPL</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-aapl">--</div>
+        <div class="sc-change up" id="change-aapl">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">MSFT</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-msft">--</div>
+        <div class="sc-change up" id="change-msft">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">NVDA</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-nvda">--</div>
+        <div class="sc-change up" id="change-nvda">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">GOOGL</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-googl">--</div>
+        <div class="sc-change up" id="change-googl">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">META</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-meta">--</div>
+        <div class="sc-change up" id="change-meta">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">TSLA</div><div class="sc-exchange">NASDAQ</div></div>
+        </div>
+        <div class="sc-price" id="price-tsla">--</div>
+        <div class="sc-change up" id="change-tsla">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">9988</div><div class="sc-exchange">HKEX</div></div>
+        </div>
+        <div class="sc-price" id="price-9988">--</div>
+        <div class="sc-change up" id="change-9988">--</div>
+      </div>
+      <div class="stock-card">
+        <div class="sc-top">
+          <div><div class="sc-name">0700</div><div class="sc-exchange">HKEX</div></div>
+        </div>
+        <div class="sc-price" id="price-0700">--</div>
+        <div class="sc-change up" id="change-0700">--</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ticker-bar">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<script>
+// Live clock
+function tick() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleString('zh-CN', {timeZone:'Asia/Shanghai', hour12:false, hour:'2-digit', minute:'2-digit', second:'2-digit'});
+}
+tick(); setInterval(tick, 1000);
+
+// Stock symbols
+const STOCKS = [
+  { id:'aapl', sym:'AAPL', name:'Apple', exch:'NASDAQ' },
+  { id:'msft', sym:'MSFT', name:'Microsoft', exch:'NASDAQ' },
+  { id:'nvda', sym:'NVDA', name:'NVIDIA', exch:'NASDAQ' },
+  { id:'googl', sym:'GOOGL', name:'Alphabet', exch:'NASDAQ' },
+  { id:'meta', sym:'META', name:'Meta', exch:'NASDAQ' },
+  { id:'tsla', sym:'TSLA', name:'Tesla', exch:'NASDAQ' },
+  { id:'9988', sym:'9988.HK', name:'阿里巴巴', exch:'HKEX', currency:'HK$' },
+  { id:'0700', sym:'0700.HK', name:'腾讯', exch:'HKEX', currency:'HK$' },
+];
+
+// Ticker bar
+const tickerTrack = document.getElementById('tickerTrack');
+STOCKS.forEach(s => {
+  tickerTrack.innerHTML += `
+    <span class="ticker-item">
+      <span class="ticker-symbol">${s.sym}</span>
+      <span class="ticker-price" id="tk-${s.id}">--</span>
+      <span class="ticker-change" id="tkc-${s.id}">--</span>
+    </span>`;
+});
+// Duplicate for seamless loop
+STOCKS.forEach(s => {
+  tickerTrack.innerHTML += `
+    <span class="ticker-item">
+      <span class="ticker-symbol">${s.sym}</span>
+      <span class="ticker-price">--</span>
+      <span class="ticker-change">--</span>
+    </span>`;
+});
+
+// Fetch real stock data from Yahoo Finance (free, no key needed)
+async function fetchStocks() {
+  const symbols = STOCKS.map(s => s.sym).join(',');
+  try {
+    // Yahoo Finance v8 API - free, no auth
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbols.replace(/,/g,'%2C')}?range=1d&interval=5m`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+    const result = data?.chart?.result;
+    if (!result) return;
+
+    STOCKS.forEach((stock, i) => {
+      const r = result[i];
+      if (!r) return;
+      const meta = r.meta;
+      const price = meta.regularMarketPrice;
+      const prevClose = meta.previousClose || meta.chartPreviousClose;
+      const change = price - prevClose;
+      const changePct = prevClose ? (change / prevClose * 100) : 0;
+      const up = change >= 0;
+      const currency = stock.currency || '$';
+
+      // Update quadrant cards
+      const priceEl = document.getElementById(`price-${stock.id}`);
+      const changeEl = document.getElementById(`change-${stock.id}`);
+      if (priceEl) {
+        priceEl.textContent = `${currency + price.toFixed(2)}`;
+        priceEl.style.color = up ? 'var(--neon-green)' : 'var(--hot-red)';
+      }
+      if (changeEl) {
+        changeEl.className = 'sc-change ' + (up ? 'up' : 'down');
+        changeEl.innerHTML = `${up ? '+' : ''}${changePct.toFixed(2)}% · ${up ? '▲' : '▼'} ${currency + Math.abs(change).toFixed(2)}`;
+      }
+
+      // Update ticker
+      const tkPrice = document.getElementById(`tk-${stock.id}`);
+      const tkChange = document.getElementById(`tkc-${stock.id}`);
+      if (tkPrice) tkPrice.textContent = `${currency + price.toFixed(2)}`;
+      if (tkChange) {
+        tkChange.className = 'ticker-change ' + (up ? 'up' : 'down');
+        tkChange.textContent = `${up ? '+' : ''}${changePct.toFixed(2)}%`;
+      }
+    });
+  } catch(e) {
+    console.log('Stock fetch error (retrying):', e.message);
+  }
+}
+
+fetchStocks();
+setInterval(fetchStocks, 30000); // Refresh every 30s
+</script>
+
+</body>
+</html>
