@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-22T11:06:44.358855+08:00",
-  "source": "rss_auto",
+  "updated": "2026-05-23T15:59:59.685529+08:00",
+  "source": "rss_merged",
   "metrics": {
     "obesity_rate": {
       "value": "18.9",
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "Experimental Drug Yields Dramatic Weight Loss",
+      "link": "https://www.nytimes.com/2026/05/21/science/retatrutide-weight-loss-drug.html",
+      "source": "NYT > Health",
+      "date": "05.22",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Semaglutide 4 年 CVOT：肥胖非糖尿病人群 MACE ↓26%，全因死亡 ↓18%，GLP-1 心血管获益证据链确立",
       "source": "NEJM",
