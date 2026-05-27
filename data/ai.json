@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-25T20:50:29.004563+08:00",
+  "updated": "2026-05-27T20:37:37.819417+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Rethinking organizational design in the age of agentic AI",
+      "link": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
+      "source": "MIT Technology Review",
+      "date": "05.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Robinhood now lets your AI agents trade stocks",
+      "link": "https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/",
+      "source": "TechCrunch",
+      "date": "05.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: coding’s future, the ‘Steroid Olympics,’ and AI-driven science",
       "link": "https://www.technologyreview.com/2026/05/22/1137845/the-download-coding-future-steroid-olympics-ai-science/",
@@ -107,32 +125,6 @@
         "多模态"
       ],
       "link": "https://news.google.com/search?q=OpenAI+o4-mini+推理&hl=zh-CN"
-    },
-    {
-      "title": "Rubin Ultra 量产提前至 Q3 2026：单卡 600W / 800 TFLOPS FP8，B300 同步扩产中",
-      "source": "NVIDIA",
-      "date": "05.16",
-      "badge": "算力",
-      "badge_type": "chip-4",
-      "tags": [
-        "芯片",
-        "算力",
-        "Rubin"
-      ],
-      "link": "https://news.google.com/search?q=NVIDIA+Rubin+Ultra+量产&hl=zh-CN"
-    },
-    {
-      "title": "《AI 赋能新型工业化三年行动计划（2026-2028）》：2028 年工业大模型渗透率目标 60%",
-      "source": "工信部",
-      "date": "05.17",
-      "badge": "政策",
-      "badge_type": "chip-2",
-      "tags": [
-        "国家战略",
-        "工业AI",
-        "国产替代"
-      ],
-      "link": "https://news.google.com/search?q=AI+新型工业化+三年行动&hl=zh-CN"
     }
   ]
 }
