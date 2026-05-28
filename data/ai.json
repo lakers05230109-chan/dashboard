@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-27T20:37:37.819417+08:00",
+  "updated": "2026-05-28T20:49:45.194152+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Vertu wants CEOs to run companies from an AI foldable starting at $6,880",
+      "link": "https://techcrunch.com/2026/05/28/vertu-wants-ceos-to-run-companies-from-an-ai-foldable-starting-at-6880/",
+      "source": "TechCrunch",
+      "date": "05.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "In more good news for Amazon, Snowflake signs $6B deal with AWS for AI CPU chips",
+      "link": "https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/",
+      "source": "TechCrunch",
+      "date": "05.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Rethinking organizational design in the age of agentic AI",
       "link": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
@@ -99,32 +117,6 @@
         "代码能力"
       ],
       "link": "https://news.google.com/search?q=DeepSeek+V5+685B+MoE&hl=zh-CN"
-    },
-    {
-      "title": "Opus 4.7：Agent 自主执行 4h+ 复杂任务，工具调用成功率 94%，长程规划能力标志性跃升",
-      "source": "Anthropic",
-      "date": "05.18",
-      "badge": "能力",
-      "badge_type": "chip-4",
-      "tags": [
-        "Agent",
-        "长任务",
-        "工具使用"
-      ],
-      "link": "https://news.google.com/search?q=Claude+Opus+4.7+Agent&hl=zh-CN"
-    },
-    {
-      "title": "o4-mini 发布：推理成本 $0.15/1M tokens，多模态推理能力接近 GPT-5 mini 水平",
-      "source": "OpenAI",
-      "date": "05.20",
-      "badge": "产品",
-      "badge_type": "chip-3",
-      "tags": [
-        "推理模型",
-        "降本",
-        "多模态"
-      ],
-      "link": "https://news.google.com/search?q=OpenAI+o4-mini+推理&hl=zh-CN"
     }
   ]
 }
