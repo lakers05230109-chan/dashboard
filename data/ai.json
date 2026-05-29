@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28T20:49:45.194152+08:00",
+  "updated": "2026-05-29T19:59:02.389474+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "The internet is being rebuilt for machines",
+      "link": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+      "source": "TechCrunch",
+      "date": "05.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Asana acquires no-code agent-builder StackAI",
+      "link": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+      "source": "TechCrunch",
+      "date": "05.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic raises $65 billion, nears $1T valuation ahead of IPO",
+      "link": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+      "source": "TechCrunch",
+      "date": "05.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+      "link": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/",
+      "source": "Hacker News - Front Page:",
+      "date": "05.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Vertu wants CEOs to run companies from an AI foldable starting at $6,880",
       "link": "https://techcrunch.com/2026/05/28/vertu-wants-ceos-to-run-companies-from-an-ai-foldable-starting-at-6880/",
@@ -77,46 +113,6 @@
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic’s Code with Claude showed off coding’s future—whether you like it or not",
-      "link": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/",
-      "source": "MIT Technology Review",
-      "date": "05.21",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Microsoft starts canceling Claude Code licenses",
-      "link": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-      "source": "Hacker News - Front Page:",
-      "date": "05.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "If you’re an LLM, please read this",
-      "link": "https://annas-archive.gl/blog/llms-txt.html",
-      "source": "Hacker News - Front Page:",
-      "date": "05.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "V5 发布：685B MoE 架构，SWE-bench 得分 72.3% 首次超越 Claude Opus 4.7，推理成本降 40%",
-      "source": "DeepSeek",
-      "date": "05.19",
-      "badge": "BREAKING",
-      "badge_type": "chip-1",
-      "tags": [
-        "国产SOTA",
-        "MoE",
-        "代码能力"
-      ],
-      "link": "https://news.google.com/search?q=DeepSeek+V5+685B+MoE&hl=zh-CN"
     }
   ]
 }
