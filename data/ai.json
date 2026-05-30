@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T19:59:02.389474+08:00",
+  "updated": "2026-05-30T16:43:11.108824+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "What happens when companies become too AI-pilled?",
+      "link": "https://techcrunch.com/video/what-happens-when-companies-become-too-ai-pilled/",
+      "source": "TechCrunch",
+      "date": "05.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "After Nvidia’s $20B not-acqui-hire, AI chip startup Groq reportedly raising $650M",
+      "link": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
+      "source": "TechCrunch",
+      "date": "05.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Cognition’s Scott Wu says AI coding agents shouldn’t replace humans",
+      "link": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
+      "source": "TechCrunch",
+      "date": "05.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Show HN: Tiny-vLLM – high performance LLM inference engine in C++ and CUDA",
+      "link": "https://github.com/jmaczan/tiny-vllm",
+      "source": "Hacker News - Front Page:",
+      "date": "05.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The internet is being rebuilt for machines",
       "link": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
@@ -74,42 +110,6 @@
       "link": "https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/",
       "source": "TechCrunch",
       "date": "05.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Rethinking organizational design in the age of agentic AI",
-      "link": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
-      "source": "MIT Technology Review",
-      "date": "05.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Robinhood now lets your AI agents trade stocks",
-      "link": "https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/",
-      "source": "TechCrunch",
-      "date": "05.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: coding’s future, the ‘Steroid Olympics,’ and AI-driven science",
-      "link": "https://www.technologyreview.com/2026/05/22/1137845/the-download-coding-future-steroid-olympics-ai-science/",
-      "source": "MIT Technology Review",
-      "date": "05.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Roundtables: Can AI Learn to Understand the World?",
-      "link": "https://www.technologyreview.com/2026/05/21/1137756/roundtables-can-ai-learn-to-understand-the-world/",
-      "source": "MIT Technology Review",
-      "date": "05.21",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
