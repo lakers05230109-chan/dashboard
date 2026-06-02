@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-02T03:31:09.691515+08:00",
+  "updated": "2026-06-02T20:59:25.567324+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,51 @@
     }
   },
   "articles": [
+    {
+      "title": "Rehumanizing global health care with agentic AI",
+      "link": "https://www.technologyreview.com/2026/06/02/1137827/rehumanizing-global-health-care-with-agentic-ai/",
+      "source": "MIT Technology Review",
+      "date": "06.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "How small businesses can leverage AI",
+      "link": "https://www.technologyreview.com/2026/06/02/1138227/how-small-businesses-can-leverage-ai/",
+      "source": "MIT Technology Review",
+      "date": "06.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP",
+      "link": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      "source": "TechCrunch",
+      "date": "06.01",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Florida sues OpenAI, Sam Altman, in first-of-its-kind lawsuit over violent incidents",
+      "link": "https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/",
+      "source": "TechCrunch",
+      "date": "06.01",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "AI Agent Guidelines for CS336 at Stanford",
+      "link": "https://github.com/stanford-cs336/assignment1-basics/blob/main/CLAUDE.md",
+      "source": "Hacker News - Front Page:",
+      "date": "06.01",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Anthropic files to go public",
       "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
@@ -65,51 +110,6 @@
       "link": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
       "source": "TechCrunch",
       "date": "05.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Cognition’s Scott Wu says AI coding agents shouldn’t replace humans",
-      "link": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
-      "source": "TechCrunch",
-      "date": "05.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Show HN: Tiny-vLLM – high performance LLM inference engine in C++ and CUDA",
-      "link": "https://github.com/jmaczan/tiny-vllm",
-      "source": "Hacker News - Front Page:",
-      "date": "05.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The internet is being rebuilt for machines",
-      "link": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
-      "source": "TechCrunch",
-      "date": "05.28",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Asana acquires no-code agent-builder StackAI",
-      "link": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
-      "source": "TechCrunch",
-      "date": "05.28",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic raises $65 billion, nears $1T valuation ahead of IPO",
-      "link": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
-      "source": "TechCrunch",
-      "date": "05.28",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
