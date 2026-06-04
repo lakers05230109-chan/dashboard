@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-04T02:08:50.963855+08:00",
+  "updated": "2026-06-04T19:36:35.324289+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Lovable signs multiyear deal with Google Cloud to up usage 5x, source says",
+      "link": "https://techcrunch.com/2026/06/03/lovable-signs-multi-year-deal-with-google-cloud-to-up-usage-5x-source-says/",
+      "source": "TechCrunch",
+      "date": "06.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "The ways we contain Claude across products",
+      "link": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "source": "Hacker News - Front Page:",
+      "date": "06.04",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Claude Code and Codex Can Have Real-Time Conversation via Git",
+      "link": "https://medium.com/@Koukyosyumei/claude-code-and-codex-can-have-real-time-conversation-via-git-f95b696c1c05",
+      "source": "Hacker News - Front Page:",
+      "date": "05.31",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Use your Nvidia GPU's VRAM as swap space on Linux",
       "link": "https://github.com/c0dejedi/nbd-vram",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
       "source": "TechCrunch",
       "date": "06.01",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Rethinking organizational design in the age of agentic AI",
-      "link": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
-      "source": "MIT Technology Review",
-      "date": "05.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "I put Google’s 24/7 AI assistant Gemini Spark to work, and it’s actually pretty useful",
-      "link": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
-      "source": "TechCrunch",
-      "date": "05.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "What happens when companies become too AI-pilled?",
-      "link": "https://techcrunch.com/video/what-happens-when-companies-become-too-ai-pilled/",
-      "source": "TechCrunch",
-      "date": "05.29",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
