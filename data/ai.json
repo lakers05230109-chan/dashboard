@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-07T18:14:29.410624+08:00",
+  "updated": "2026-06-08T22:41:09.147566+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: how the World Cup ball will fly and OpenAI’s “super app”",
+      "link": "https://www.technologyreview.com/2026/06/08/1138485/the-download-world-cup-ball-openai-super-app/",
+      "source": "MIT Technology Review",
+      "date": "06.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Notion restores access to Anthropic after service disruption",
+      "link": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
+      "source": "TechCrunch",
+      "date": "06.07",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI is still working on that ‘super app’",
+      "link": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/",
+      "source": "TechCrunch",
+      "date": "06.07",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "How small businesses can leverage AI",
       "link": "https://www.technologyreview.com/2026/06/02/1138227/how-small-businesses-can-leverage-ai/",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/06/04/airbnbs-brian-chesky-plans-to-launch-a-new-ai-lab/",
       "source": "TechCrunch",
       "date": "06.04",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Lovable signs multiyear deal with Google Cloud to up usage 5x, source says",
-      "link": "https://techcrunch.com/2026/06/03/lovable-signs-multi-year-deal-with-google-cloud-to-up-usage-5x-source-says/",
-      "source": "TechCrunch",
-      "date": "06.03",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The ways we contain Claude across products",
-      "link": "https://www.anthropic.com/engineering/how-we-contain-claude",
-      "source": "Hacker News - Front Page:",
-      "date": "06.04",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Claude Code and Codex Can Have Real-Time Conversation via Git",
-      "link": "https://medium.com/@Koukyosyumei/claude-code-and-codex-can-have-real-time-conversation-via-git-f95b696c1c05",
-      "source": "Hacker News - Front Page:",
-      "date": "05.31",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
