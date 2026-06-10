@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-09T19:44:06.914936+08:00",
+  "updated": "2026-06-10T20:40:23.040598+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "How Justin Ernest invested nearly $500M into hot startups without a traditional VC fund",
+      "link": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a-traditional-vc-fund/",
+      "source": "TechCrunch",
+      "date": "06.09",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic’s Fable 5 can make weirdly fun video games with the click of a button",
+      "link": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button/",
+      "source": "TechCrunch",
+      "date": "06.09",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Learning to lead in a hybrid human-AI enterprise",
       "link": "https://www.technologyreview.com/2026/06/09/1137830/learning-to-lead-in-a-hybrid-human-ai-enterprise/",
@@ -90,24 +108,6 @@
     {
       "title": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
       "link": "https://www.technologyreview.com/2026/06/05/1138452/the-download-ai-hacking-mythos-chatbots-brain-impacts/",
-      "source": "MIT Technology Review",
-      "date": "06.05",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Supabase doubles valuation to $10B in 8 months",
-      "link": "https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/",
-      "source": "TechCrunch",
-      "date": "06.05",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Meta hack shows there’s more to AI security than Mythos",
-      "link": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/",
       "source": "MIT Technology Review",
       "date": "06.05",
       "tags": [],
