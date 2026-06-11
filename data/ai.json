@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T20:40:23.040598+08:00",
+  "updated": "2026-06-11T11:33:47.807182+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "AI agent runs amok in Fedora and elsewhere",
+      "link": "https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9/",
+      "source": "Hacker News - Front Page:",
+      "date": "06.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Claude Desktop spawns 1.8 GB Hyper-V VM on every launch, even for chat-only use",
+      "link": "https://github.com/anthropics/claude-code/issues/29045",
+      "source": "Hacker News - Front Page:",
+      "date": "06.10",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "How Justin Ernest invested nearly $500M into hot startups without a traditional VC fund",
       "link": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a-traditional-vc-fund/",
@@ -92,24 +110,6 @@
       "link": "https://www.technologyreview.com/2026/06/02/1138227/how-small-businesses-can-leverage-ai/",
       "source": "MIT Technology Review",
       "date": "06.02",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
-      "link": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/",
-      "source": "TechCrunch",
-      "date": "06.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
-      "link": "https://www.technologyreview.com/2026/06/05/1138452/the-download-ai-hacking-mythos-chatbots-brain-impacts/",
-      "source": "MIT Technology Review",
-      "date": "06.05",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
