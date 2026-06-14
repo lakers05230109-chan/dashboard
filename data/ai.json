@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-13T10:58:27.504761+08:00",
+  "updated": "2026-06-14T11:36:52.525580+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "As Anthropic suspends access to new models, India debates its AI future",
+      "link": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/",
+      "source": "TechCrunch",
+      "date": "06.14",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Amazon CEO reportedly raised Anthropic model concerns before government crackdown",
+      "link": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/",
+      "source": "TechCrunch",
+      "date": "06.13",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI faces investigation from state attorneys general",
+      "link": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+      "source": "TechCrunch",
+      "date": "06.13",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Anthropic’s safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
       "link": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
@@ -83,33 +110,6 @@
       "link": "https://github.com/anthropics/claude-code/issues/29045",
       "source": "Hacker News - Front Page:",
       "date": "06.10",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "How Justin Ernest invested nearly $500M into hot startups without a traditional VC fund",
-      "link": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a-traditional-vc-fund/",
-      "source": "TechCrunch",
-      "date": "06.09",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic’s Fable 5 can make weirdly fun video games with the click of a button",
-      "link": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button/",
-      "source": "TechCrunch",
-      "date": "06.09",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Learning to lead in a hybrid human-AI enterprise",
-      "link": "https://www.technologyreview.com/2026/06/09/1137830/learning-to-lead-in-a-hybrid-human-ai-enterprise/",
-      "source": "MIT Technology Review",
-      "date": "06.09",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
