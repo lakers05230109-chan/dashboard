@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T11:51:14.614933+08:00",
+  "updated": "2026-06-16T11:40:35.886391+08:00",
   "source": "rss_merged",
   "metrics": {
     "week_filings": {
@@ -101,7 +101,7 @@
   "csrc": {
     "tangji_rank": 190,
     "total": 734,
-    "updated": "2026-06-15",
+    "updated": "2026-06-16",
     "source": "中证监国际部",
     "note": "每周五更新 · 需手动确认排名"
   }

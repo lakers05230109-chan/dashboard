@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T11:51:14.614460+08:00",
+  "updated": "2026-06-16T11:40:35.885975+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "The US government’s Anthropic models ban was never about an AI jailbreak",
+      "link": "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/",
+      "source": "TechCrunch",
+      "date": "06.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models",
+      "link": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
+      "source": "TechCrunch",
+      "date": "06.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Salesforce acquires AI customer service platform Fin for $3.6B",
+      "link": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+      "source": "TechCrunch",
+      "date": "06.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Claude Corps",
+      "link": "https://www.anthropic.com/news/claude-corps",
+      "source": "Hacker News - Front Page:",
+      "date": "06.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "As Anthropic suspends access to new models, India debates its AI future",
       "link": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/",
@@ -74,42 +110,6 @@
       "link": "https://status.claude.com/incidents/s9w82lp9dcn9",
       "source": "Hacker News - Front Page:",
       "date": "06.13",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Google DeepMind is worried about what happens when millions of agents start to interact",
-      "link": "https://www.technologyreview.com/2026/06/11/1138794/google-deepmind-is-worried-about-what-happens-when-millions-of-agents-start-to-interact/",
-      "source": "MIT Technology Review",
-      "date": "06.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Coinbase’s new tool can help agents trade and pay for premium research",
-      "link": "https://techcrunch.com/2026/06/11/coinbase-debuts-mcp-for-agent-trading/",
-      "source": "TechCrunch",
-      "date": "06.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "AI agent runs amok in Fedora and elsewhere",
-      "link": "https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9/",
-      "source": "Hacker News - Front Page:",
-      "date": "06.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Claude Desktop spawns 1.8 GB Hyper-V VM on every launch, even for chat-only use",
-      "link": "https://github.com/anthropics/claude-code/issues/29045",
-      "source": "Hacker News - Front Page:",
-      "date": "06.10",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
