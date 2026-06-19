@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T11:32:54.714965+08:00",
+  "updated": "2026-06-19T11:54:44.635282+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "OpenAI is bringing on some big guns in the lead-up to its IPO",
+      "link": "https://techcrunch.com/2026/06/18/openai-is-bringing-on-some-big-guns-in-the-lead-up-to-its-ipo/",
+      "source": "TechCrunch",
+      "date": "06.18",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Amazon hopes to challenge Nvidia more directly by selling its AI chips",
+      "link": "https://techcrunch.com/2026/06/18/amazon-hopes-to-challenge-nvidia-more-directly-by-selling-its-ai-chips/",
+      "source": "TechCrunch",
+      "date": "06.18",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Trellis AI (YC W24)  hiring a product lead to build agents for healthcare access",
+      "link": "https://www.ycombinator.com/companies/trellis-ai/jobs/Cg94htp-product-lead",
+      "source": "Hacker News - Front Page:",
+      "date": "06.17",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "How to turn off AI in your Google Docs",
       "link": "https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/06/16/android-17-launches-with-new-multitasking-tools-as-google-expands-gemini-features/",
       "source": "TechCrunch",
       "date": "06.16",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "GPT‑NL: a sovereign language model for the Netherlands",
-      "link": "https://www.tno.nl/en/digital/artificial-intelligence/gpt-nl/",
-      "source": "Hacker News - Front Page:",
-      "date": "06.16",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The US government’s Anthropic models ban was never about an AI jailbreak",
-      "link": "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/",
-      "source": "TechCrunch",
-      "date": "06.15",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models",
-      "link": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
-      "source": "TechCrunch",
-      "date": "06.15",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
