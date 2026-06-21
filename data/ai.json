@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T10:56:20.837411+08:00",
+  "updated": "2026-06-21T11:43:01.807689+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
+      "link": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+      "source": "TechCrunch",
+      "date": "06.20",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "From PGP to Mythos: a brief history of export controls that didn’t stop anyone",
+      "link": "https://techcrunch.com/2026/06/19/encryption-spyware-and-now-mythos-history-shows-why-cyber-export-control-doesnt-work/",
+      "source": "TechCrunch",
+      "date": "06.19",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Temporary Cloudflare accounts for AI agents",
+      "link": "https://blog.cloudflare.com/temporary-accounts/",
+      "source": "Hacker News - Front Page:",
+      "date": "06.20",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: AI bottleneck debates, and BCI trials take off",
       "link": "https://www.technologyreview.com/2026/06/19/1139327/the-download-llms-bottleneck-breakthrough-bci-trials-take-off/",
@@ -82,33 +109,6 @@
       "title": "Trellis AI (YC W24)  hiring a product lead to build agents for healthcare access",
       "link": "https://www.ycombinator.com/companies/trellis-ai/jobs/Cg94htp-product-lead",
       "source": "Hacker News - Front Page:",
-      "date": "06.17",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "How to turn off AI in your Google Docs",
-      "link": "https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/",
-      "source": "TechCrunch",
-      "date": "06.18",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "NEA’s Tiffany Luck says enterprises are still figuring out their AI ROI",
-      "link": "https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/",
-      "source": "TechCrunch",
-      "date": "06.17",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "World leaders want American AI. They just don’t want America to be able to turn it off.",
-      "link": "https://techcrunch.com/2026/06/17/world-leaders-want-american-ai-they-just-dont-want-america-to-be-able-to-turn-it-off/",
-      "source": "TechCrunch",
       "date": "06.17",
       "tags": [],
       "badge": "NEW",
