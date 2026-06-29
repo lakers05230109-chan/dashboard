@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T11:25:40.882844+08:00",
+  "updated": "2026-06-29T11:30:55.822475+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Stripe, Anthropic, and OpenAI are backing an effort to stop respiratory infections",
+      "link": "https://www.technologyreview.com/2026/06/24/1139621/stripe-anthropic-and-openai-are-backing-an-effort-to-stop-respiratory-infections/",
+      "source": "MIT Technology Review",
+      "date": "06.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
+      "link": "https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/",
+      "source": "TechCrunch",
+      "date": "06.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Apple Vision Pro exec is reportedly leaving for OpenAI",
       "link": "https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/",
@@ -90,24 +108,6 @@
     {
       "title": "The White House is asking OpenAI to slow roll the release of its new model over safety concerns",
       "link": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
-      "source": "TechCrunch",
-      "date": "06.25",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
-      "link": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
-      "source": "TechCrunch",
-      "date": "06.25",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Notion Mail shuts down amid agent takeover",
-      "link": "https://techcrunch.com/2026/06/25/notion-mail-shuts-down-amid-agent-takeover/",
       "source": "TechCrunch",
       "date": "06.25",
       "tags": [],
