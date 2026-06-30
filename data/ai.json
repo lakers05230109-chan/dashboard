@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T11:30:55.822475+08:00",
+  "updated": "2026-06-30T10:55:23.429966+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "AI agents are not your “coworkers”",
+      "link": "https://www.technologyreview.com/2026/06/29/1139849/ai-agents-are-not-your-coworkers/",
+      "source": "MIT Technology Review",
+      "date": "06.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Agent confidence on the technical frontier",
+      "link": "https://www.technologyreview.com/2026/06/29/1139635/agent-confidence-on-the-technical-frontier/",
+      "source": "MIT Technology Review",
+      "date": "06.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Gemini’s personalized AI image generation is now free for US users",
+      "link": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/",
+      "source": "TechCrunch",
+      "date": "06.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic and Gov. Newsom forge deal allowing California government to use Claude at half price",
+      "link": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
+      "source": "TechCrunch",
+      "date": "06.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Stripe, Anthropic, and OpenAI are backing an effort to stop respiratory infections",
       "link": "https://www.technologyreview.com/2026/06/24/1139621/stripe-anthropic-and-openai-are-backing-an-effort-to-stop-respiratory-infections/",
@@ -74,42 +110,6 @@
       "link": "https://www.technologyreview.com/2026/06/26/1139780/the-download-heatwaves-brain-health-openai-restrictions/",
       "source": "MIT Technology Review",
       "date": "06.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Trump Admin releases Anthropic  Mythos to be used by more than 100 US companies, agencies",
-      "link": "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/",
-      "source": "TechCrunch",
-      "date": "06.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI limits GPT-5.6 rollout after government request, says restrictions shouldn’t be the norm",
-      "link": "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
-      "source": "TechCrunch",
-      "date": "06.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI poaches Uber India chief to lead its biggest market outside the US",
-      "link": "https://techcrunch.com/2026/06/26/openai-poaches-uber-india-chief-to-lead-its-biggest-market-outside-the-u-s/",
-      "source": "TechCrunch",
-      "date": "06.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The White House is asking OpenAI to slow roll the release of its new model over safety concerns",
-      "link": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
-      "source": "TechCrunch",
-      "date": "06.25",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
