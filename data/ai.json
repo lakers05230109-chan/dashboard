@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T10:55:23.429966+08:00",
+  "updated": "2026-07-01T11:25:38.658310+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Claude Science is Anthropic’s newest flagship product",
+      "link": "https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/",
+      "source": "MIT Technology Review",
+      "date": "06.30",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "The Download: AI “coworkers” and stratospheric internet",
+      "link": "https://www.technologyreview.com/2026/06/30/1139954/the-download-ai-agents-coworkers-solar-powered-internet/",
+      "source": "MIT Technology Review",
+      "date": "06.30",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Building tech in the world’s secret R&D hub",
+      "link": "https://www.technologyreview.com/2026/06/30/1139661/building-tech-in-the-worlds-secret-rd-hub/",
+      "source": "MIT Technology Review",
+      "date": "06.30",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "AI agents are not your “coworkers”",
       "link": "https://www.technologyreview.com/2026/06/29/1139849/ai-agents-are-not-your-coworkers/",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/",
       "source": "TechCrunch",
       "date": "06.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The fittest founder in the room got cancer. Here’s how he used AI to fight back.",
-      "link": "https://techcrunch.com/2026/06/27/the-fittest-founder-in-the-room-got-cancer-heres-how-he-used-ai-to-fight-back/",
-      "source": "TechCrunch",
-      "date": "06.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Asian AI startups launch Mythos-like  models as Anthropic’s export ban drags on",
-      "link": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/",
-      "source": "TechCrunch",
-      "date": "06.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: brain-melting heatwaves and unprecedented OpenAI restrictions",
-      "link": "https://www.technologyreview.com/2026/06/26/1139780/the-download-heatwaves-brain-health-openai-restrictions/",
-      "source": "MIT Technology Review",
-      "date": "06.26",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"

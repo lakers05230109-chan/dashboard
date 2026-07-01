@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T10:55:22.613988+08:00",
+  "updated": "2026-07-01T11:25:36.751475+08:00",
   "source": "rss_merged",
   "metrics": {
     "obesity_rate": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "Medicare Begins Coverage of GLP-1 Drugs for Weight Loss July 1: What to Know",
+      "link": "https://www.nytimes.com/2026/05/15/business/glp-1-weight-loss-drugs-cost-medicare.html",
+      "source": "NYT > Health",
+      "date": "05.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Experimental Drug Yields Dramatic Weight Loss",
       "link": "https://www.nytimes.com/2026/05/21/science/retatrutide-weight-loss-drug.html",
