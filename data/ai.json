@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T10:51:33.205085+08:00",
+  "updated": "2026-07-03T10:34:45.713644+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: a startup has a solution for AI’s groupthink problem",
+      "link": "https://www.technologyreview.com/2026/07/02/1140027/the-download-ai-groupthink-llms/",
+      "source": "MIT Technology Review",
+      "date": "07.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "LLMs are stuck in a groupthink groove. This startup is trying to get them out.",
       "link": "https://www.technologyreview.com/2026/07/01/1140003/llms-are-stuck-in-a-groupthink-rut-this-startup-is-trying-to-get-them-out/",
@@ -101,15 +110,6 @@
       "link": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
       "source": "TechCrunch",
       "date": "06.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Stripe, Anthropic, and OpenAI are backing an effort to stop respiratory infections",
-      "link": "https://www.technologyreview.com/2026/06/24/1139621/stripe-anthropic-and-openai-are-backing-an-effort-to-stop-respiratory-infections/",
-      "source": "MIT Technology Review",
-      "date": "06.24",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
