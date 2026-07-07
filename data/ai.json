@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T10:47:12.451102+08:00",
+  "updated": "2026-07-07T10:42:40.322437+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "Your family’s $300 stake in OpenAI",
+      "link": "https://www.technologyreview.com/2026/07/06/1140176/your-familys-300-stake-in-openai/",
+      "source": "MIT Technology Review",
+      "date": "07.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "The ‘first’ AI-run ransomware attack still needed a human",
+      "link": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+      "source": "TechCrunch",
+      "date": "07.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
+      "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
+      "source": "TechCrunch",
+      "date": "07.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files",
+      "link": "https://github.com/iOfficeAI/OfficeCLI",
+      "source": "Hacker News - Front Page:",
+      "date": "07.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Alibaba reportedly bans employees from using Claude Code",
       "link": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
@@ -74,42 +110,6 @@
       "link": "https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/",
       "source": "MIT Technology Review",
       "date": "06.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: AI “coworkers” and stratospheric internet",
-      "link": "https://www.technologyreview.com/2026/06/30/1139954/the-download-ai-agents-coworkers-solar-powered-internet/",
-      "source": "MIT Technology Review",
-      "date": "06.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Building tech in the world’s secret R&D hub",
-      "link": "https://www.technologyreview.com/2026/06/30/1139661/building-tech-in-the-worlds-secret-rd-hub/",
-      "source": "MIT Technology Review",
-      "date": "06.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "AI agents are not your “coworkers”",
-      "link": "https://www.technologyreview.com/2026/06/29/1139849/ai-agents-are-not-your-coworkers/",
-      "source": "MIT Technology Review",
-      "date": "06.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Agent confidence on the technical frontier",
-      "link": "https://www.technologyreview.com/2026/06/29/1139635/agent-confidence-on-the-technical-frontier/",
-      "source": "MIT Technology Review",
-      "date": "06.29",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
