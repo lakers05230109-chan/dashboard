@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T10:21:20.180291+08:00",
+  "updated": "2026-07-09T10:34:42.433947+08:00",
   "source": "rss_merged",
   "metrics": {
     "obesity_rate": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "Tiny Love Stories: ‘Why Aren’t You Having Sex Anymore?’",
+      "link": "https://www.nytimes.com/2026/07/08/style/tiny-modern-love-stories-why-arent-you-having-sex-anymore.html",
+      "source": "NYT > Health",
+      "date": "07.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Medicare Begins Coverage of GLP-1 Drugs for Weight Loss July 1: What to Know",
       "link": "https://www.nytimes.com/2026/05/15/business/glp-1-weight-loss-drugs-cost-medicare.html",
