@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T10:34:42.764770+08:00",
+  "updated": "2026-07-10T10:36:55.409676+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Anthropic found a hidden space where Claude puzzles over concepts",
+      "link": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+      "source": "MIT Technology Review",
+      "date": "07.09",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "The Download: a nuclear landmark, and China eyes Nvidia chips",
+      "link": "https://www.technologyreview.com/2026/07/09/1140283/the-download-nuclear-power-milestone-nvidia-china-ai-chips/",
+      "source": "MIT Technology Review",
+      "date": "07.09",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "This startup thinks robotics is about to have its ChatGPT moment",
       "link": "https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
       "source": "TechCrunch",
       "date": "07.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files",
-      "link": "https://github.com/iOfficeAI/OfficeCLI",
-      "source": "Hacker News - Front Page:",
-      "date": "07.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Alibaba reportedly bans employees from using Claude Code",
-      "link": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
-      "source": "TechCrunch",
-      "date": "07.04",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
