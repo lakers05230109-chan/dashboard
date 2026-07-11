@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T10:36:55.409676+08:00",
+  "updated": "2026-07-11T10:12:23.791742+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: Claude’s inner workings and OpenAI’s “super app”",
+      "link": "https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/",
+      "source": "MIT Technology Review",
+      "date": "07.10",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Anthropic found a hidden space where Claude puzzles over concepts",
       "link": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
@@ -99,15 +108,6 @@
     {
       "title": "The ‘first’ AI-run ransomware attack still needed a human",
       "link": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
-      "source": "TechCrunch",
-      "date": "07.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
-      "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
       "source": "TechCrunch",
       "date": "07.06",
       "tags": [],
