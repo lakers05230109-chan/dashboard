@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T10:04:18.030008+08:00",
+  "updated": "2026-07-15T10:01:36.592945+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: Claude’s inner workings, and the future of world models",
+      "link": "https://www.technologyreview.com/2026/07/14/1140391/the-download-anthropic-claude-internal-thoughts-world-models/",
+      "source": "MIT Technology Review",
+      "date": "07.14",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "What Anthropic’s latest AI discovery does—and doesn’t—show",
       "link": "https://www.technologyreview.com/2026/07/13/1140343/what-anthropics-latest-ai-discovery-does-and-doesnt-show/",
@@ -101,15 +110,6 @@
       "link": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
       "source": "TechCrunch",
       "date": "07.07",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Your family’s $300 stake in OpenAI",
-      "link": "https://www.technologyreview.com/2026/07/06/1140176/your-familys-300-stake-in-openai/",
-      "source": "MIT Technology Review",
-      "date": "07.06",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
