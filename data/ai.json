@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T10:01:36.592945+08:00",
+  "updated": "2026-07-16T10:11:02.593310+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "Meet GPT-Red: an LLM super-hacker OpenAI built to make its models safer",
+      "link": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+      "source": "MIT Technology Review",
+      "date": "07.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: Claude’s inner workings, and the future of world models",
       "link": "https://www.technologyreview.com/2026/07/14/1140391/the-download-anthropic-claude-internal-thoughts-world-models/",
@@ -99,15 +108,6 @@
     {
       "title": "Why the rise of open source AI isn’t hurting Anthropic … yet",
       "link": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
-      "source": "TechCrunch",
-      "date": "07.07",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Figma acquires team behind a vibe-coding app",
-      "link": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
       "source": "TechCrunch",
       "date": "07.07",
       "tags": [],
