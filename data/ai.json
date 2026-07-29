@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T10:07:19.860214+08:00",
+  "updated": "2026-07-29T10:10:39.740253+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: OpenAI’s predictable hack, and an AI stock sell-off",
+      "link": "https://www.technologyreview.com/2026/07/28/1140868/the-download-openai-hack-ai-stock-sell-off/",
+      "source": "MIT Technology Review",
+      "date": "07.28",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Cyera agrees to acquire Oasis Security for $1B to safeguard proliferating AI agents",
+      "link": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/",
+      "source": "TechCrunch",
+      "date": "07.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "OpenAI called the Hugging Face attack unprecedented. But we’ve been here before.",
       "link": "https://www.technologyreview.com/2026/07/27/1140836/openai-hugging-face-attack-precedent/",
@@ -92,24 +110,6 @@
       "link": "https://github.com/faizannraza/wattage",
       "source": "Hacker News - Front Page:",
       "date": "07.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The new rules of context engineering for Claude 5 generation models",
-      "link": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
-      "source": "Hacker News - Front Page:",
-      "date": "07.25",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "LLM Usage in Debian: Three Proposals",
-      "link": "https://www.debian.org/vote/2026/vote_002",
-      "source": "Hacker News - Front Page:",
-      "date": "07.25",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
