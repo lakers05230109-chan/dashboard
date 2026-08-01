@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T10:25:24.852488+08:00",
+  "updated": "2026-08-01T10:26:13.254087+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "OpenAI reportedly finds evidence that more of its agents ran amok",
+      "link": "https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/",
+      "source": "TechCrunch",
+      "date": "07.31",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Sam Altman isn’t the only one who wants to pump the brakes on AI",
+      "link": "https://techcrunch.com/video/sam-altman-isnt-the-only-one-who-wants-to-pump-the-brakes-on-ai/",
+      "source": "TechCrunch",
+      "date": "07.31",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: tricking LLMs, and reviving geothermal plants",
       "link": "https://www.technologyreview.com/2026/07/30/1140936/the-download-tricking-llms-reviving-geothermal/",
@@ -90,24 +108,6 @@
     {
       "title": "OpenAI called the Hugging Face attack unprecedented. But we’ve been here before.",
       "link": "https://www.technologyreview.com/2026/07/27/1140836/openai-hugging-face-attack-precedent/",
-      "source": "MIT Technology Review",
-      "date": "07.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The path to artificial superintelligence",
-      "link": "https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/",
-      "source": "MIT Technology Review",
-      "date": "07.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Building the enterprise environment for agentic AI",
-      "link": "https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/",
       "source": "MIT Technology Review",
       "date": "07.27",
       "tags": [],
