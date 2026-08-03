@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T10:23:45.721894+08:00",
+  "updated": "2026-08-03T10:26:13.798602+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "These App Store hidden gems prove there’s still room for great software in the AI era",
+      "link": "https://techcrunch.com/2026/08/02/these-app-store-hidden-gems-prove-theres-still-room-for-great-software-in-the-ai-era/",
+      "source": "TechCrunch",
+      "date": "08.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "YouTuber Hank Green says his AI usage is ‘not healthy’",
       "link": "https://techcrunch.com/2026/08/01/youtuber-hank-green-says-his-ai-usage-is-not-healthy/",
@@ -101,15 +110,6 @@
       "link": "https://techcrunch.com/2026/07/29/mark-zuckerberg-predicts-that-billions-of-people-will-have-personal-ai-agents-in-five-years/",
       "source": "TechCrunch",
       "date": "07.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: OpenAI’s predictable hack, and an AI stock sell-off",
-      "link": "https://www.technologyreview.com/2026/07/28/1140868/the-download-openai-hack-ai-stock-sell-off/",
-      "source": "MIT Technology Review",
-      "date": "07.28",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
