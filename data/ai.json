@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T10:05:44.393254+08:00",
+  "updated": "2026-08-05T10:04:52.067927+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "SpaceX doubles revenue on Anthropic and Google compute deals, Starlink growth",
+      "link": "https://techcrunch.com/2026/08/04/spacex-doubles-revenues-on-anthropic-and-google-compute-deals-starlink-growth/",
+      "source": "TechCrunch",
+      "date": "08.04",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: reward hacking explained, and suspected Iranian cyberattacks",
       "link": "https://www.technologyreview.com/2026/08/03/1141039/the-download-reward-hacking-water-cyberattacks/",
@@ -99,15 +108,6 @@
     {
       "title": "The Download: tricking LLMs, and reviving geothermal plants",
       "link": "https://www.technologyreview.com/2026/07/30/1140936/the-download-tricking-llms-reviving-geothermal/",
-      "source": "MIT Technology Review",
-      "date": "07.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "A fundamental flaw leaves LLMs strikingly vulnerable to attack",
-      "link": "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/",
       "source": "MIT Technology Review",
       "date": "07.30",
       "tags": [],
