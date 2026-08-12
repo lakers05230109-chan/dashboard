@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T09:19:41.523305+08:00",
+  "updated": "2026-08-12T09:28:14.474720+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: the next big thing in LLMs and how AI academic research is shifting",
+      "link": "https://www.technologyreview.com/2026/08/11/1141610/the-download-next-big-thing-llms-ai-academic-research-shifting/",
+      "source": "MIT Technology Review",
+      "date": "08.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI launches ChatGPT desktop app for Linux",
+      "link": "https://techcrunch.com/2026/08/11/openai-launches-chatgpt-desktop-app-for-linux/",
+      "source": "TechCrunch",
+      "date": "08.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Google’s Gemini app surges to 1 billion users",
+      "link": "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/",
+      "source": "TechCrunch",
+      "date": "08.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: AI agents for science, and the “censorship-industrial complex”",
       "link": "https://www.technologyreview.com/2026/08/10/1141526/the-download-ai-agents-science-censorship-industrial-complex/",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
       "source": "TechCrunch",
       "date": "08.09",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Here’s why AI agents lie and cheat to reach their goals",
-      "link": "https://www.technologyreview.com/2026/08/03/1141009/heres-why-ai-agents-lie-and-cheat-to-reach-their-goals/",
-      "source": "MIT Technology Review",
-      "date": "08.03",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI acquires presentation startup NextSlide",
-      "link": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/",
-      "source": "TechCrunch",
-      "date": "08.08",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI says it slowed Astra model development over security concerns",
-      "link": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/",
-      "source": "TechCrunch",
-      "date": "08.07",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
