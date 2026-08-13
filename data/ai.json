@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T09:28:14.474720+08:00",
+  "updated": "2026-08-13T09:38:35.220087+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Scaling AI agents with trustworthy data",
+      "link": "https://www.technologyreview.com/2026/08/12/1141032/scaling-ai-agents-with-trustworthy-data/",
+      "source": "MIT Technology Review",
+      "date": "08.12",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Some Claude users are mad that Anthropic’s new watermarks will catch them using it at their jobs, classes",
+      "link": "https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/",
+      "source": "TechCrunch",
+      "date": "08.12",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: the next big thing in LLMs and how AI academic research is shifting",
       "link": "https://www.technologyreview.com/2026/08/11/1141610/the-download-next-big-thing-llms-ai-academic-research-shifting/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/",
       "source": "TechCrunch",
       "date": "08.10",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic is turning Claude Code’s auto mode on by default",
-      "link": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
-      "source": "TechCrunch",
-      "date": "08.09",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The AI safety test is becoming a safety risk",
-      "link": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
-      "source": "TechCrunch",
-      "date": "08.09",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
