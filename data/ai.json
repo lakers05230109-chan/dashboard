@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T09:29:22.225326+08:00",
+  "updated": "2026-08-15T08:58:50.529896+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Job titles of the future: Space travel agent",
+      "link": "https://www.technologyreview.com/2026/08/14/1141431/job-titles-space-travel-agent-roman-chiporukha/",
+      "source": "MIT Technology Review",
+      "date": "08.14",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Kog is going deeper to squeeze more inference out of GPUs",
+      "link": "https://techcrunch.com/2026/08/14/kog-is-going-deeper-to-squeeze-more-inference-out-of-gpus/",
+      "source": "TechCrunch",
+      "date": "08.14",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "OpenAI introduces ‘Ultrafast,’ a new mode that makes GPT-5.6 Sol work at 14x the speed",
       "link": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/08/11/openai-launches-chatgpt-desktop-app-for-linux/",
       "source": "TechCrunch",
       "date": "08.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Google’s Gemini app surges to 1 billion users",
-      "link": "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/",
-      "source": "TechCrunch",
-      "date": "08.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: AI agents for science, and the “censorship-industrial complex”",
-      "link": "https://www.technologyreview.com/2026/08/10/1141526/the-download-ai-agents-science-censorship-industrial-complex/",
-      "source": "MIT Technology Review",
-      "date": "08.10",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
