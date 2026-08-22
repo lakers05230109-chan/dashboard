@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T09:02:24.946941+08:00",
+  "updated": "2026-08-22T08:58:51.125425+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Anthropic’s Opus 4.6 is a smut-machine",
+      "link": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+      "source": "TechCrunch",
+      "date": "08.21",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Nvidia partners with data center developer Cloverleaf",
+      "link": "https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/",
+      "source": "TechCrunch",
+      "date": "08.21",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+      "link": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+      "source": "TechCrunch",
+      "date": "08.21",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Debates over AI consciousness are a trap",
       "link": "https://www.technologyreview.com/2026/08/20/1142571/ai-consciousness-debate-trap/",
@@ -83,33 +110,6 @@
       "link": "https://www.technologyreview.com/2026/08/18/1142226/how-people-use-ai/",
       "source": "MIT Technology Review",
       "date": "08.18",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "AI’s recursive self-improvement might not come so quickly after all",
-      "link": "https://www.technologyreview.com/2026/08/18/1142188/ai-recursive-self-improvement/",
-      "source": "MIT Technology Review",
-      "date": "08.18",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI institutes new safeguards after Hugging Face breach",
-      "link": "https://techcrunch.com/2026/08/18/openai-institutes-new-safeguards-after-hugging-face-breach/",
-      "source": "TechCrunch",
-      "date": "08.18",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic’s annualized revenue surges to $65B",
-      "link": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/",
-      "source": "TechCrunch",
-      "date": "08.17",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
