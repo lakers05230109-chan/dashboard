@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T09:01:51.472523+08:00",
+  "updated": "2026-08-25T09:01:32.638529+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "How to encourage smarter AI use in the classroom",
+      "link": "https://www.technologyreview.com/2026/08/24/1142630/ai-school-classroom-policies/",
+      "source": "MIT Technology Review",
+      "date": "08.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "The Download: kids outlearning AI, and space travel agents",
+      "link": "https://www.technologyreview.com/2026/08/24/1142863/the-download-kids-outlearning-ai-space-travel-agents/",
+      "source": "MIT Technology Review",
+      "date": "08.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Kids outlearn AI—and we still don’t know why",
+      "link": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning/",
+      "source": "MIT Technology Review",
+      "date": "08.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Alabama launches investigation into OpenAI’s hack of Hugging Face",
+      "link": "https://techcrunch.com/2026/08/24/alabama-launches-investigation-into-openais-hack-of-hugging-face/",
+      "source": "TechCrunch",
+      "date": "08.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
       "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
@@ -74,42 +110,6 @@
       "link": "https://www.technologyreview.com/2026/08/20/1142571/ai-consciousness-debate-trap/",
       "source": "MIT Technology Review",
       "date": "08.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI is gaining on Anthropic with business users, new data indicates",
-      "link": "https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/",
-      "source": "TechCrunch",
-      "date": "08.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "ChatGPT can now send texts for you with new Apple Messages plug-in",
-      "link": "https://techcrunch.com/2026/08/20/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plugin/",
-      "source": "TechCrunch",
-      "date": "08.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI seeks to one-up Anthropic with new customer privacy protections",
-      "link": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/",
-      "source": "TechCrunch",
-      "date": "08.19",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Cognition CEO denies report that SpaceX tried to acquire the startup",
-      "link": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/",
-      "source": "TechCrunch",
-      "date": "08.19",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
