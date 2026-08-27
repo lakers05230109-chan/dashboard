@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T09:02:03.840353+08:00",
+  "updated": "2026-08-27T14:59:21.497147+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,51 @@
     }
   },
   "articles": [
+    {
+      "title": "The inside story on why OpenAI agents hacked Hugging Face",
+      "link": "https://www.technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face/",
+      "source": "MIT Technology Review",
+      "date": "08.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Nvidia closes in on Hugging Face acquisition",
+      "link": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/",
+      "source": "TechCrunch",
+      "date": "08.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
+      "link": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/",
+      "source": "TechCrunch",
+      "date": "08.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic continues compute-gobbling streak in $45B deal with Nscale",
+      "link": "https://techcrunch.com/2026/08/26/anthropic-continues-compute-gobbling-streak-in-45-billion-deal-with-nscale/",
+      "source": "TechCrunch",
+      "date": "08.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Google’s Gemini has a branding problem, and so does the rest of AI",
+      "link": "https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/",
+      "source": "TechCrunch",
+      "date": "08.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "OpenAI loses a top data center exec, as stream of high-profile departures continues",
       "link": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/",
@@ -65,51 +110,6 @@
       "link": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning/",
       "source": "MIT Technology Review",
       "date": "08.24",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Alabama launches investigation into OpenAI’s hack of Hugging Face",
-      "link": "https://techcrunch.com/2026/08/24/alabama-launches-investigation-into-openais-hack-of-hugging-face/",
-      "source": "TechCrunch",
-      "date": "08.24",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
-      "link": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
-      "source": "TechCrunch",
-      "date": "08.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI says California should strengthen its AI safety bill",
-      "link": "https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/",
-      "source": "TechCrunch",
-      "date": "08.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic’s Opus 4.6 is a smut-machine",
-      "link": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
-      "source": "TechCrunch",
-      "date": "08.21",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Nvidia partners with data center developer Cloverleaf",
-      "link": "https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/",
-      "source": "TechCrunch",
-      "date": "08.21",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
