@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T14:59:21.497147+08:00",
+  "updated": "2026-08-28T16:47:16.198881+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: inside OpenAI’s Hugging Face hack, and a new EV takes on the US",
+      "link": "https://www.technologyreview.com/2026/08/27/1143033/the-download-openai-hugging-face-hack-slate-truck-ev/",
+      "source": "MIT Technology Review",
+      "date": "08.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic and OpenAI are joining the AI stage at TechCrunch Disrupt 2026",
+      "link": "https://techcrunch.com/2026/08/27/anthropic-and-openai-are-joining-the-ai-stage-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch",
+      "date": "08.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Barret Zoph, the Thinking Machines co-founder ousted before joining OpenAI, is now at Google",
+      "link": "https://techcrunch.com/2026/08/27/barret-zoph-the-thinking-machines-co-founder-who-defected-to-openai-is-now-at-google/",
+      "source": "TechCrunch",
+      "date": "08.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI, Anthropic, Google, and 100 other companies call for action to defend against rogue AI",
+      "link": "https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/",
+      "source": "TechCrunch",
+      "date": "08.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The inside story on why OpenAI agents hacked Hugging Face",
       "link": "https://www.technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face/",
@@ -74,42 +110,6 @@
       "link": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/",
       "source": "TechCrunch",
       "date": "08.26",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Claude Cowork finally remembers what you told the app in chat",
-      "link": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/",
-      "source": "TechCrunch",
-      "date": "08.25",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "How to encourage smarter AI use in the classroom",
-      "link": "https://www.technologyreview.com/2026/08/24/1142630/ai-school-classroom-policies/",
-      "source": "MIT Technology Review",
-      "date": "08.24",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: kids outlearning AI, and space travel agents",
-      "link": "https://www.technologyreview.com/2026/08/24/1142863/the-download-kids-outlearning-ai-space-travel-agents/",
-      "source": "MIT Technology Review",
-      "date": "08.24",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Kids outlearn AI—and we still don’t know why",
-      "link": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning/",
-      "source": "MIT Technology Review",
-      "date": "08.24",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
