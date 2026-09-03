@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T10:36:41.311026+08:00",
+  "updated": "2026-09-03T10:43:11.045763+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "TechCrunch Disrupt 2026’s new Real World AI Stage features Nvidia, robots, and extinct animals",
+      "link": "https://techcrunch.com/2026/09/02/techcrunch-disrupt-2026s-new-real-world-ai-stage-features-nvidia-robots-and-extinct-animals/",
+      "source": "TechCrunch",
+      "date": "09.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI’s new reasoning technique alarms AI safety experts",
+      "link": "https://techcrunch.com/2026/09/02/openais-new-reasoning-technique-alarms-ai-safety-experts/",
+      "source": "TechCrunch",
+      "date": "09.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "source": "Hacker News - Front Page:",
+      "date": "09.02",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: engineered microbes for crops, and OpenAI’s culture problem",
       "link": "https://www.technologyreview.com/2026/09/01/1143199/the-download-engineered-microbes-openai-safety-culture/",
@@ -83,33 +110,6 @@
       "link": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
       "source": "TechCrunch",
       "date": "08.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Nvidia’s AI advantage is moving beyond the GPU",
-      "link": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
-      "source": "TechCrunch",
-      "date": "08.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Neocloud Lambda secures $1B in debt to buy more chips",
-      "link": "https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/",
-      "source": "TechCrunch",
-      "date": "08.28",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-      "link": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
-      "source": "TechCrunch",
-      "date": "08.28",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
