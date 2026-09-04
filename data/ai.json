@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T10:43:11.045763+08:00",
+  "updated": "2026-09-04T10:40:17.572840+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Scaling agentic AI pilots across the enterprise",
+      "link": "https://www.technologyreview.com/2026/09/03/1142868/scaling-agentic-ai-pilots-across-the-enterprise/",
+      "source": "MIT Technology Review",
+      "date": "09.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Meta is paying to peek at how you use their latest AI model",
+      "link": "https://techcrunch.com/2026/09/03/meta-is-paying-to-peek-at-how-you-use-their-latest-ai-model/",
+      "source": "TechCrunch",
+      "date": "09.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI launches Astra, its powerful (and controversial) new model",
+      "link": "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/",
+      "source": "TechCrunch",
+      "date": "09.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "TechCrunch Disrupt 2026’s new Real World AI Stage features Nvidia, robots, and extinct animals",
       "link": "https://techcrunch.com/2026/09/02/techcrunch-disrupt-2026s-new-real-world-ai-stage-features-nvidia-robots-and-extinct-animals/",
@@ -83,33 +110,6 @@
       "link": "https://www.technologyreview.com/2026/08/31/1143180/hugging-face-hack-could-indicate-cultural-issues-at-openai/",
       "source": "MIT Technology Review",
       "date": "08.31",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Apple shares ‘shocking evidence’ against former employee accused of stealing company data for OpenAI",
-      "link": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/",
-      "source": "TechCrunch",
-      "date": "09.01",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Pentagon now has its own version of ChatGPT and Grok",
-      "link": "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/",
-      "source": "TechCrunch",
-      "date": "08.31",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
-      "link": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
-      "source": "TechCrunch",
-      "date": "08.29",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
