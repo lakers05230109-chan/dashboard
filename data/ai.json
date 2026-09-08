@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T10:36:55.691129+08:00",
+  "updated": "2026-09-08T10:49:37.040816+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: the hunt for underground hydrogen and more rogue OpenAI agents",
+      "link": "https://www.technologyreview.com/2026/09/07/1143592/the-download-underground-hydrogen-search-rogue-openai-agents/",
+      "source": "MIT Technology Review",
+      "date": "09.07",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Authors push back as publishers and agents make claims on Anthropic settlement",
       "link": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
@@ -100,15 +109,6 @@
       "title": "Scaling agentic AI pilots across the enterprise",
       "link": "https://www.technologyreview.com/2026/09/03/1142868/scaling-agentic-ai-pilots-across-the-enterprise/",
       "source": "MIT Technology Review",
-      "date": "09.03",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Meta is paying to peek at how you use their latest AI model",
-      "link": "https://techcrunch.com/2026/09/03/meta-is-paying-to-peek-at-how-you-use-their-latest-ai-model/",
-      "source": "TechCrunch",
       "date": "09.03",
       "tags": [],
       "badge": "NEW",
