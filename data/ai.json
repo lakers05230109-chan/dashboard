@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T10:44:39.194671+08:00",
+  "updated": "2026-09-12T10:53:35.574858+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "OpenAI’s feud with mathematicians is only escalating",
+      "link": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
+      "source": "TechCrunch",
+      "date": "09.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Nscale adds former OpenAI exec Fidji Simo to its board ahead of potential IPO",
+      "link": "https://techcrunch.com/2026/09/11/nscale-adds-former-openai-exec-fidji-simo-to-its-board-ahead-of-potential-ipo/",
+      "source": "TechCrunch",
+      "date": "09.11",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Jensen Huang explains why Nvidia will grow an astounding 70% next year",
       "link": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/",
@@ -90,24 +108,6 @@
     {
       "title": "Hackers are stealing Claude tokens from subscribers",
       "link": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/",
-      "source": "TechCrunch",
-      "date": "09.08",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Meta debuts its Muse AI agent. Will consumers trust it?",
-      "link": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
-      "source": "TechCrunch",
-      "date": "09.08",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI fought dirty on career-making math problem, says NYU mathematician",
-      "link": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/",
       "source": "TechCrunch",
       "date": "09.08",
       "tags": [],
