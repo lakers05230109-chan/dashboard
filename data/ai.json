@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T11:06:40.312706+08:00",
+  "updated": "2026-09-17T11:09:09.984910+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: AI’s trillion-dollar gamble and OpenAI’s biology data bid",
+      "link": "https://www.technologyreview.com/2026/09/16/1144205/the-download-ai-trillion-dollar-build-openai-biological-data/",
+      "source": "MIT Technology Review",
+      "date": "09.16",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: AI doomers, whistleblowing agents, and de-aged livers",
       "link": "https://www.technologyreview.com/2026/09/15/1144141/the-download-ai-extinction-whistleblowing-agents-donated-livers/",
@@ -101,15 +110,6 @@
       "link": "https://techcrunch.com/2026/09/13/insight-partners-devin-parekh-on-why-the-firm-is-diversifying-while-everyone-else-bets-the-farm-on-openai-and-anthropic/",
       "source": "TechCrunch",
       "date": "09.13",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Reverse-Engineering Claude Web's MicroVM: Uncovering Anthropic's Hidden Antspace",
-      "link": "https://aprilnea.me/en/blog/reverse-engineering-claude-code-antspace",
-      "source": "Hacker News - Front Page:",
-      "date": "09.11",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
