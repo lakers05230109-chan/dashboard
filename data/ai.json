@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T11:11:12.721633+08:00",
+  "updated": "2026-09-26T11:16:19.602434+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge",
+      "link": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+      "source": "TechCrunch",
+      "date": "09.25",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
+      "link": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
+      "source": "TechCrunch",
+      "date": "09.25",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Ahead of US IPO, British AI neocloud Nscale secures $3.36B in convertible financing",
+      "link": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing/",
+      "source": "TechCrunch",
+      "date": "09.25",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "PrismML brings its tiny LLMs to Qualcomm-powered smart glasses",
       "link": "https://techcrunch.com/2026/09/24/prismml-brings-its-tiny-llms-to-qualcomm-powered-smart-glasses/",
@@ -82,33 +109,6 @@
       "title": "Hacking group ShinyHunters claims it breached the FBI, stole agents’ and applicants’ data",
       "link": "https://techcrunch.com/2026/09/22/hacking-group-shinyhunters-claims-it-breached-the-fbi-stole-agents-and-applicants-data/",
       "source": "TechCrunch",
-      "date": "09.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
-      "link": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
-      "source": "TechCrunch",
-      "date": "09.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
-      "link": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
-      "source": "TechCrunch",
-      "date": "09.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "GPT-6 Sol and Luna",
-      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
-      "source": "Hacker News - Front Page:",
       "date": "09.22",
       "tags": [],
       "badge": "NEW",
