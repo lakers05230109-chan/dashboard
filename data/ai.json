@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T11:16:19.602434+08:00",
+  "updated": "2026-09-27T11:23:03.968468+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+      "link": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+      "source": "TechCrunch",
+      "date": "09.27",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Generate fonts where every LLM token is the same width",
+      "link": "https://ampdot.mesh.host/token-space-fonts.html",
+      "source": "Hacker News - Front Page:",
+      "date": "09.26",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge",
       "link": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big/",
       "source": "TechCrunch",
       "date": "09.23",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Don’t be fooled by this summer of AI hype",
-      "link": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/",
-      "source": "MIT Technology Review",
-      "date": "09.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Hacking group ShinyHunters claims it breached the FBI, stole agents’ and applicants’ data",
-      "link": "https://techcrunch.com/2026/09/22/hacking-group-shinyhunters-claims-it-breached-the-fbi-stole-agents-and-applicants-data/",
-      "source": "TechCrunch",
-      "date": "09.22",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
