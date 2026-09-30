@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T11:57:23.905772+08:00",
+  "updated": "2026-09-30T11:44:40.577396+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "The internet is convinced Elon Musk’s xAI trolled OpenAI’s ‘Dots’ launch",
+      "link": "https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/",
+      "source": "TechCrunch",
+      "date": "09.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI’s latest features take direct aim at the app store model",
+      "link": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/",
+      "source": "TechCrunch",
+      "date": "09.29",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "When can we say AI made a scientific discovery?",
       "link": "https://www.technologyreview.com/2026/09/28/1145230/when-can-we-say-ai-made-a-scientific-discovery/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/09/27/anthropics-dario-amodei-gets-the-snl-treatment/",
       "source": "TechCrunch",
       "date": "09.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
-      "link": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
-      "source": "TechCrunch",
-      "date": "09.27",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Generate fonts where every LLM token is the same width",
-      "link": "https://ampdot.mesh.host/token-space-fonts.html",
-      "source": "Hacker News - Front Page:",
-      "date": "09.26",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
