@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T11:33:45.536217+08:00",
+  "updated": "2026-10-04T12:03:31.720833+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
+      "link": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
+      "source": "TechCrunch",
+      "date": "10.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: a biological de-aging contest and why LLMs don’t reason",
       "link": "https://www.technologyreview.com/2026/10/02/1145666/the-download-biological-de-aging-ai-reasoning/",
@@ -101,15 +110,6 @@
       "link": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/",
       "source": "TechCrunch",
       "date": "09.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "When can we say AI made a scientific discovery?",
-      "link": "https://www.technologyreview.com/2026/09/28/1145230/when-can-we-say-ai-made-a-scientific-discovery/",
-      "source": "MIT Technology Review",
-      "date": "09.28",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
