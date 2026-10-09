@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T12:14:22.012269+08:00",
+  "updated": "2026-10-09T12:19:40.026049+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,51 @@
     }
   },
   "articles": [
+    {
+      "title": "Building a safer path to autonomous industrial AI",
+      "link": "https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai/",
+      "source": "MIT Technology Review",
+      "date": "10.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect",
+      "link": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+      "source": "TechCrunch",
+      "date": "10.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Ben Affleck is an AI nerd, and the internet is impressed",
+      "link": "https://techcrunch.com/2026/10/08/ben-affleck-is-an-ai-nerd-and-the-internet-is-impressed/",
+      "source": "TechCrunch",
+      "date": "10.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI’s revenue is reportedly $20 billion less than previously projected",
+      "link": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/",
+      "source": "TechCrunch",
+      "date": "10.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Google brings agentic AI to Gemini, starting with businesses",
+      "link": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/",
+      "source": "TechCrunch",
+      "date": "10.08",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
       "link": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
@@ -65,51 +110,6 @@
       "link": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
       "source": "TechCrunch",
       "date": "10.07",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "AI computing startup Lambda to raise $4B ahead of planned IPO",
-      "link": "https://techcrunch.com/2026/10/06/ai-computing-startup-lambda-to-raise-4b-ahead-of-planned-ipo/",
-      "source": "TechCrunch",
-      "date": "10.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The next hurdle for AI agents: getting websites to let them in",
-      "link": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in/",
-      "source": "TechCrunch",
-      "date": "10.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Mirror Particle is building a ‘world model’ of human behavior",
-      "link": "https://techcrunch.com/2026/10/06/mirror-particle-is-building-a-world-model-of-human-behavior/",
-      "source": "TechCrunch",
-      "date": "10.06",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Connecting AI agents to enterprise knowledge",
-      "link": "https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/",
-      "source": "MIT Technology Review",
-      "date": "10.05",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Bringing predictive analytics to the agentic AI era",
-      "link": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/",
-      "source": "MIT Technology Review",
-      "date": "10.05",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
