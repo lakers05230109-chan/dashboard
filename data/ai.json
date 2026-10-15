@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T11:19:23.758176+08:00",
+  "updated": "2026-10-15T10:57:45.598060+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "CedarDB wants one database to handle both transactions and analytics, as AI agents raise the stakes",
+      "link": "https://techcrunch.com/2026/10/14/cedardb-wants-one-database-to-handle-both-transactions-and-analytics-as-ai-agents-raise-the-stakes/",
+      "source": "TechCrunch",
+      "date": "10.14",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: open model trade-offs and geothermal power’s promise",
       "link": "https://www.technologyreview.com/2026/10/13/1146382/the-download-open-models-trade-offs-geothermal-power/",
@@ -101,15 +110,6 @@
       "link": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
       "source": "Hacker News - Front Page:",
       "date": "10.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Here are the top AI agents that can live in your text messages",
-      "link": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "source": "TechCrunch",
-      "date": "10.10",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
