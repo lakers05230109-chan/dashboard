@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T10:57:45.598060+08:00",
+  "updated": "2026-10-16T10:55:21.566460+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "Anthropic is letting METR researchers look under the hood with employee-level access",
+      "link": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
+      "source": "TechCrunch",
+      "date": "10.15",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "CedarDB wants one database to handle both transactions and analytics, as AI agents raise the stakes",
       "link": "https://techcrunch.com/2026/10/14/cedardb-wants-one-database-to-handle-both-transactions-and-analytics-as-ai-agents-raise-the-stakes/",
@@ -99,15 +108,6 @@
     {
       "title": "The gap in shared understanding of LLM capability is widening",
       "link": "https://twitter.com/karpathy/status/2109361546505966046",
-      "source": "Hacker News - Front Page:",
-      "date": "10.11",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "500B tokens later: Letting AI agents decompile a first-person shooter",
-      "link": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
       "source": "Hacker News - Front Page:",
       "date": "10.11",
       "tags": [],
