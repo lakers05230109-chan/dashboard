@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T10:46:27.296978+08:00",
+  "updated": "2026-10-18T10:48:44.949602+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,33 @@
     }
   },
   "articles": [
+    {
+      "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
+      "link": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+      "source": "TechCrunch",
+      "date": "10.17",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Replit makes OpenAI its default over Anthropic, CEO says",
+      "link": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+      "source": "TechCrunch",
+      "date": "10.17",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+      "link": "https://llmspeed.dev/",
+      "source": "Hacker News - Front Page:",
+      "date": "10.17",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Replit is no longer working with Anthropic, CEO says",
       "link": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
@@ -82,33 +109,6 @@
       "title": "The Download: open model trade-offs and geothermal power’s promise",
       "link": "https://www.technologyreview.com/2026/10/13/1146382/the-download-open-models-trade-offs-geothermal-power/",
       "source": "MIT Technology Review",
-      "date": "10.13",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Open models have real benefits. Do they outweigh the risks?",
-      "link": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
-      "source": "MIT Technology Review",
-      "date": "10.13",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "FBI arrests OpenAI employee accused of planting hidden recording device in conference room",
-      "link": "https://techcrunch.com/2026/10/13/fbi-arrests-openai-employee-accused-of-planting-hidden-recording-device-in-conference-room/",
-      "source": "TechCrunch",
-      "date": "10.13",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
-      "link": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/",
-      "source": "TechCrunch",
       "date": "10.13",
       "tags": [],
       "badge": "NEW",
