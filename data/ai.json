@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T13:06:09.464008+08:00",
+  "updated": "2026-11-04T12:38:42.722700+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: controlling AI agents and “Super Intelligence” loyalty tests",
+      "link": "https://www.technologyreview.com/2026/11/03/1147940/the-download-controlling-ai-agents-trump-super-intelligence/",
+      "source": "MIT Technology Review",
+      "date": "11.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "How “reverse game theory” could keep AI agents in check",
+      "link": "https://www.technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/",
+      "source": "MIT Technology Review",
+      "date": "11.03",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Raising the quality of insights in agentic analytics",
       "link": "https://www.technologyreview.com/2026/11/02/1147660/raising-the-quality-of-insights-in-agentic-analytics/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
       "source": "TechCrunch",
       "date": "10.30",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The Download: AI agent tracking and climate feedback loops",
-      "link": "https://www.technologyreview.com/2026/10/29/1147830/the-download-monitoring-ai-agents-climate-feedback-loops/",
-      "source": "MIT Technology Review",
-      "date": "10.29",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "We urgently need to monitor AI agents’ actions in real time",
-      "link": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/",
-      "source": "MIT Technology Review",
-      "date": "10.29",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
