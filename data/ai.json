@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T12:38:42.722700+08:00",
+  "updated": "2026-11-05T12:53:31.486037+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "The Download: blended meat, restored sight, and the agentic web",
+      "link": "https://www.technologyreview.com/2026/11/04/1148001/the-download-blended-meat-sight-restoring-implant-agentic-web/",
+      "source": "MIT Technology Review",
+      "date": "11.04",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Securing the agentic enterprise with data lineage",
+      "link": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
+      "source": "MIT Technology Review",
+      "date": "11.04",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "The Download: controlling AI agents and “Super Intelligence” loyalty tests",
       "link": "https://www.technologyreview.com/2026/11/03/1147940/the-download-controlling-ai-agents-trump-super-intelligence/",
@@ -92,24 +110,6 @@
       "link": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
       "source": "TechCrunch",
       "date": "10.31",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
-      "link": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
-      "source": "TechCrunch",
-      "date": "10.31",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
-      "link": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
-      "source": "TechCrunch",
-      "date": "10.30",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
