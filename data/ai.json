@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T12:52:40.902104+08:00",
+  "updated": "2026-11-07T12:23:59.134387+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,24 @@
     }
   },
   "articles": [
+    {
+      "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+      "link": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+      "source": "TechCrunch",
+      "date": "11.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+      "link": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+      "source": "TechCrunch",
+      "date": "11.06",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
       "link": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
@@ -92,24 +110,6 @@
       "link": "https://www.technologyreview.com/2026/11/02/1147889/the-download-agentic-web-arrives-eliminating-traffic-deaths/",
       "source": "MIT Technology Review",
       "date": "11.02",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "The agentic web is here",
-      "link": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/",
-      "source": "MIT Technology Review",
-      "date": "11.02",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
-      "link": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
-      "source": "TechCrunch",
-      "date": "11.01",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
