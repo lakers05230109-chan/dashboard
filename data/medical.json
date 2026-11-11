@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T13:46:02.552136+08:00",
+  "updated": "2026-11-11T12:27:38.371100+08:00",
   "source": "rss_merged",
   "metrics": {
     "obesity_rate": {
@@ -24,6 +24,15 @@
     }
   },
   "articles": [
+    {
+      "title": "An Anti-Trump Protest. Police Threats. Inside a Rift in Diabetes Research.",
+      "link": "https://www.nytimes.com/2026/11/09/science/american-diabetes-association-turmoil.html",
+      "source": "NYT > Health",
+      "date": "11.09",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "Tiny Love Stories: ‘Why Aren’t You Having Sex Anymore?’",
       "link": "https://www.nytimes.com/2026/07/08/style/tiny-modern-love-stories-why-arent-you-having-sex-anymore.html",
@@ -128,19 +137,6 @@
         "管线追踪"
       ],
       "link": "https://news.google.com/search?q=中国+减重赛道+融资+2026&hl=zh-CN"
-    },
-    {
-      "title": "代谢手术 vs 药物治疗 10 年随访：手术组 2 型糖尿病缓解率 54%，显著优于药物",
-      "source": "JAMA",
-      "date": "05.14",
-      "badge": "长期",
-      "badge_type": "chip-3",
-      "tags": [
-        "减重外科",
-        "糖尿病缓解",
-        "10年证据"
-      ],
-      "link": "https://news.google.com/search?q=代谢手术+糖尿病缓解+10年+JAMA&hl=zh-CN"
     }
   ]
 }
