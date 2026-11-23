@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T12:50:03.353625+08:00",
+  "updated": "2026-11-23T13:29:11.866203+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+      "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/",
+      "source": "TechCrunch",
+      "date": "11.23",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+      "link": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+      "source": "TechCrunch",
+      "date": "11.22",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+      "link": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "source": "Hacker News - Front Page:",
+      "date": "11.22",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Show HN: I built a game where you are an LLM's subagent",
+      "link": "https://github.com/gulivan/worker755",
+      "source": "Hacker News - Front Page:",
+      "date": "11.22",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "A tale of two Nvidias",
       "link": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
@@ -74,42 +110,6 @@
       "link": "https://signal.org/blog/protecting-your-privacy/",
       "source": "Hacker News - Front Page:",
       "date": "11.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Apple may be developing its own AI agent that runs your Mac",
-      "link": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
-      "source": "TechCrunch",
-      "date": "11.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
-      "link": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
-      "source": "TechCrunch",
-      "date": "11.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Anthropic rival says companies can (mostly) skip the pricey models",
-      "link": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
-      "source": "TechCrunch",
-      "date": "11.20",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "These tech outages are giving Y2K, AI agent style",
-      "link": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
-      "source": "TechCrunch",
-      "date": "11.19",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
