@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T16:08:18.103906+08:00",
+  "updated": "2026-11-25T14:46:00.416468+08:00",
   "source": "rss_merged",
   "metrics": {
     "m7_mcap": {
@@ -24,6 +24,42 @@
     }
   },
   "articles": [
+    {
+      "title": "Raising the stakes for enterprise networks with AI modernization",
+      "link": "https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization/",
+      "source": "MIT Technology Review",
+      "date": "11.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to US industrial might — not a champion",
+      "link": "https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/",
+      "source": "TechCrunch",
+      "date": "11.25",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "Trump reportedly says pardoning Jensen Huang is ‘an option’",
+      "link": "https://techcrunch.com/2026/11/24/trump-reportedly-says-pardoning-jensen-huang-is-an-option-but-that-he-doesnt-think-it-will-be-necessary/",
+      "source": "TechCrunch",
+      "date": "11.25",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
+    {
+      "title": "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy",
+      "link": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
+      "source": "TechCrunch",
+      "date": "11.24",
+      "tags": [],
+      "badge": "NEW",
+      "badge_type": "chip-3"
+    },
     {
       "title": "A legendary philosopher isn’t buying Anthropic’s consciousness argument",
       "link": "https://www.technologyreview.com/2026/11/23/1149569/a-legendary-philosopher-isnt-buying-anthropics-consciousness-argument/",
@@ -74,42 +110,6 @@
       "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/",
       "source": "TechCrunch",
       "date": "11.23",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
-      "link": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
-      "source": "TechCrunch",
-      "date": "11.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
-      "link": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
-      "source": "Hacker News - Front Page:",
-      "date": "11.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "Show HN: I built a game where you are an LLM's subagent",
-      "link": "https://github.com/gulivan/worker755",
-      "source": "Hacker News - Front Page:",
-      "date": "11.22",
-      "tags": [],
-      "badge": "NEW",
-      "badge_type": "chip-3"
-    },
-    {
-      "title": "A tale of two Nvidias",
-      "link": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
-      "source": "TechCrunch",
-      "date": "11.21",
       "tags": [],
       "badge": "NEW",
       "badge_type": "chip-3"
